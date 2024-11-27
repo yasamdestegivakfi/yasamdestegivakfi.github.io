@@ -1,79 +1,107 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Yaşam Desteği Vakfı</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Container for all cards */
-			.card-container {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 40px;
-				padding: 40px 0;
-			}
+    <head>
+        <title>Yaşam Desteği Vakfı</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* Container for all cards */
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                padding: 40px 0;
+            }
 
-			/* Row for the Başkan */
-			.baskan-row {
-				display: flex;
-				justify-content: center;
-				width: 100%;
-			}
+            /* Row for the Başkan */
+            .baskan-row {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
 
-			/* Row for the Üyeler */
-			.uyeler-row {
-				display: flex;
-				justify-content: center;
-				gap: 20px;
-				flex-wrap: wrap;
-			}
+            /* Row for the Üyeler */
+            .uyeler-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            /* Row for the Üyeler */
+            .denetmen-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            /* Individual Card Styling */
+            .card {
+                width: 250px;
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                background-color: #fff;
+                position: relative;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
 
-			/* Individual Card Styling */
-			.card {
-				width: 250px;
-				text-align: center;
-				border: 1px solid #ddd;
-				border-radius: 8px;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-				padding: 20px;
-				background-color: #fff;
-			}
+            .card img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 15px;
+            }
 
-			.card img {
-				width: 150px;
-				height: 150px;
-				object-fit: cover;
-				border-radius: 50%;
-				margin-bottom: 15px;
-			}
+            .card-title {
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #333;
+            }
 
-			.card-title {
-				font-size: 1.2em;
-				font-weight: bold;
-				margin-bottom: 8px;
-				color: #333;
-			}
+            .card-subtitle {
+                font-size: 1em;
+                color: #555;
+            }
 
-			.card-subtitle {
-				font-size: 1em;
-				color: #555;
-			}
+            /* "Yaşam Desteği" Metni İçin Stil */
+            .yasam-destegi-text {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0.8);
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-weight: bold;
+                color: #333;
+                font-size: 1em;
+            }
 
-			/* Responsive Design */
-			@media (max-width: 768px) {
-				.uyeler-row {
-					flex-direction: column;
-					align-items: center;
-				}
+            /* Hover Effect */
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
 
-				.card {
-					width: 80%;
-				}
-			}
-		</style>
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .uyeler-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .card {
+                    width: 80%;
+                }
+            }
+        </style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -88,7 +116,7 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="index.html">Anasayfa</a></li>
-						<li><a href="https://lsc.hacettepe.edu.tr/about_us.html">Hakkımızda</a></li>
+						<li><a href="hakkimizda.html">Hakkımızda</a></li>
 						<li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
 						<li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
 						<li><a href="https://lsc.hacettepe.edu.tr/">İletişim</a></li>
@@ -107,18 +135,22 @@
 							<div class="card-container">
 								<!-- Yönetim Kurulu Başkanı -->
 								<div class="baskan-row">
-									<div class="card">
-										<img src="images/bbbigsqr.jpg" alt="Yönetim Kurulu Başkanı">
-										<div class="card-title">Yönetim Kurulu Başkanı</div>
-										<div class="card-subtitle">Benan Bayrakci</div>
-									</div>
-								</div>
+                                    <div class="card">
+                                        <span class="yasam-destegi-text">Yaşam Desteği</span>
+                                        <!-- Resme tıklanabilir link eklemek için <a> etiketi kullanıldı -->
+                                        <a href="https://lsc.hacettepe.edu.tr/bbenan.html" target="_blank">
+                                            <img src="images/bbbigsqr.jpg" alt="Yönetim Kurulu Başkanı">
+                                        </a>
+                                        <div class="card-title">Yönetim Kurulu Başkanı</div>
+                                        <div class="card-subtitle">Benan Bayrakci</div>
+                                    </div>
+                                </div>
 
 								<!-- Yönetim Kurulu Üyeleri -->
 								<div class="uyeler-row">
 									<div class="card">
 										<img src="images/malenonimage.jpg" alt="Yönetim Kurulu Üyesi">
-										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-title">Yönetim Kurulu Başkan Yardımcısı</div>
 										<div class="card-subtitle">Ufuk Güneş</div>
 									</div>
 									<div class="card">
@@ -132,6 +164,23 @@
 										<div class="card-subtitle">Hayrettin Hakan Aykan</div>
 									</div>
 								</div>
+								<div class="denetmen-row">
+									<div class="card">
+										<img src="images/selmankesicisqr.jpg" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Selman Kesici</div>
+									</div>
+									<div class="card">
+										<img src="images/malenonimage.jpg" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Ahmet Birbilen</div>
+									</div>
+									<div class="card">
+										<img src="images/malenonimage.jpg" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Bekir Okur</div>
+									</div>
+								</div>								
 							</div>
 						</article>
 
