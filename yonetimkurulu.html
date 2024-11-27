@@ -1,154 +1,164 @@
 <!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>Yaşam Desteği Vakfı</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Container for all cards */
+			.card-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 40px;
+				padding: 40px 0;
+			}
+
+			/* Row for the Başkan */
+			.baskan-row {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+			}
+
+			/* Row for the Üyeler */
+			.uyeler-row {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+
+			/* Individual Card Styling */
+			.card {
+				width: 250px;
+				text-align: center;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				padding: 20px;
+				background-color: #fff;
+			}
+
+			.card img {
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+				border-radius: 50%;
+				margin-bottom: 15px;
+			}
+
+			.card-title {
+				font-size: 1.2em;
+				font-weight: bold;
+				margin-bottom: 8px;
+				color: #333;
+			}
+
+			.card-subtitle {
+				font-size: 1em;
+				color: #555;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.uyeler-row {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.card {
+					width: 80%;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header">
+			<div id="header">
 
-					<!-- Logo -->
-						<h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
+				<!-- Logo -->
+				<h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Anasayfa</a></li>
-							<!--<li>
-								<a href="#">Dropdown</a>
-								<ul>
-									<li><a href="#">Lorem dolor</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam sed tempus</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Lorem dolor</a></li>
-											<li><a href="#">Phasellus magna</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam nisl</a></li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Veroeros feugiat</a></li>
-								</ul>
-							</li>-->
-							<li><a href="https://lsc.hacettepe.edu.tr/about_us.html>Hakkımızda</a></li>
-							<li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-							<li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
-							<li><a href="https://lsc.hacettepe.edu.tr/">İletişim</a></li>
-						</ul>
-					</nav>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="index.html">Anasayfa</a></li>
+						<li><a href="https://lsc.hacettepe.edu.tr/about_us.html">Hakkımızda</a></li>
+						<li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
+						<li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
+						<li><a href="https://lsc.hacettepe.edu.tr/">İletişim</a></li>
+					</ul>
+				</nav>
 
 			</div>
 
 			<!-- Main -->
-				<section class="wrapper style1">
-					<div class="container">
-						<div id="content">
+			<section class="wrapper style1">
+				<div class="container">
+					<div id="content">
 
-							<!-- Content -->
+						<!-- Content -->
+						<article>
+							<div class="card-container">
+								<!-- Yönetim Kurulu Başkanı -->
+								<div class="baskan-row">
+									<div class="card">
+										<img src="images/bbbigsqr.jpg" alt="Yönetim Kurulu Başkanı">
+										<div class="card-title">Yönetim Kurulu Başkanı</div>
+										<div class="card-subtitle">Benan Bayrakci</div>
+									</div>
+								</div>
 
-								<article>
-									<header>
-										<h2>Yönetim Kurulu</h2>
-									</header>
+								<!-- Yönetim Kurulu Üyeleri -->
+								<div class="uyeler-row">
+									<div class="card">
+										<img src="images/malenonimage.jpg" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-subtitle">Ufuk Güneş</div>
+									</div>
+									<div class="card">
+										<img src="images/malenonimage.jpg" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-subtitle">Makbule Erdem</div>
+									</div>
+									<div class="card">
+										<img src="images/haykansqr.jpg" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-subtitle">Hayrettin Hakan Aykan</div>
+									</div>
+								</div>
+							</div>
+						</article>
 
-									<span class="image featured"><img src="images/yonetim.jpg" alt="" /></span>
-
-
-									<h3>Bu kısım güncellenmektedr</h3>
-
-									<p></p>
-								</article>
-
-						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 
 			<!-- Footer -->
 			<div id="footer">
 				<div class="container">
 					<div class="row">
-						<!--<section class="col-3 col-6-narrower col-12-mobilep">
-							<h3>Links to Stuff</h3>
-							<ul class="links">
-								<li><a href="#">Mattis et quis rutrum</a></li>
-								<li><a href="#">Suspendisse amet varius</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum accumsan dolor</a></li>
-								<li><a href="#">Mattis rutrum accumsan</a></li>
-								<li><a href="#">Suspendisse varius nibh</a></li>
-								<li><a href="#">Sed et dapibus mattis</a></li>
-							</ul>
-						</section>
-						<section class="col-3 col-6-narrower col-12-mobilep">
-							<h3>More Links to Stuff</h3>
-							<ul class="links">
-								<li><a href="#">Duis neque nisi dapibus</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum accumsan sed</a></li>
-								<li><a href="#">Mattis et sed accumsan</a></li>
-								<li><a href="#">Duis neque nisi sed</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum amet varius</a></li>
-							</ul>
-						</section>-->
-						<!--<section class="col-6 col-12-narrower">
-							<h3>Get In Touch</h3>
-							<form>
-								<div class="row gtr-50">
-									<div class="col-6 col-12-mobilep">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-mobilep">
-										<input type="email" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" class="button alt" value="Send Message" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>-->
+						
 					</div>
 				</div>
 
-				<!-- Icons -->
-					<!--<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
-					</ul>-->
-
-				<!-- Copyright -->
-					<div class="copyright">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="https://turkalpmd.com">TurkalpMD</a></li>
-						</ul>
-					</div>
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved</li>
+						<li>Design: <a href="https://turkalpmd.com">TurkalpMD</a></li>
+					</ul>
+				</div>
 
 			</div>
 
-	</div>
+		</div>
 
-	<!-- Scripts -->
+		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
@@ -156,5 +166,5 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-</body>
+	</body>
 </html>
