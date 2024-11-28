@@ -11,6 +11,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 		<!-- Favicon Ekle -->
 		<link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
@@ -29,6 +33,55 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+
+		<!-- Ek CSS (Carousel özelleştirmeleri için) -->
+		<style>
+			/* Carousel Wrapper - %80 Boyutlandırma */
+			#banner-wrapper {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* Yüksekliği istenilen şekilde ayarlayın */
+				height: 80vh; /* Viewport yüksekliğinin %80'i */
+				overflow: hidden;
+			}
+
+			/* Bootstrap Carousel Ayarları */
+			#banner {
+				width: 80%; /* Genişliği %80 olarak ayarlayın */
+				height: 100%; /* Yüksekliği wrapper ile eşitleyin */
+			}
+
+			#banner .carousel-item {
+				height: 100%;
+			}
+
+			#banner .carousel-item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* Mobil cihazlar için banner yüksekliği */
+			@media (max-width: 768px) {
+				#banner-wrapper {
+					height: 50vh; /* Mobil cihazlar için daha küçük yükseklik */
+				}
+				#banner {
+					width: 90%; /* Mobilde genişliği artırabilirsiniz */
+				}
+			}
+
+			@media (max-width: 480px) {
+				#banner-wrapper {
+					height: 40vh; /* Daha küçük mobil cihazlar için */
+				}
+				#banner {
+					width: 95%; /* Mobilde genişliği daha da artırabilirsiniz */
+				}
+			}
+		</style>
 	</head>
 
 	<body class="is-preload">
@@ -52,14 +105,44 @@
 				</nav>
 		
 			</div> <!-- /#header -->
-		
-			<!-- Banner -->
-			<div id="banner">
-				<img src="images/vakıf.png" alt="Banner Resmi" style="width:auto; height:auto;">
-			</div> <!-- /#banner -->
-		
-		</div> <!-- /#page-wrapper -->
-		
+
+			<!-- Bootstrap Carousel Wrapper -->
+			<div id="banner-wrapper">
+				<!-- Bootstrap Carousel -->
+				<div id="banner" class="carousel slide" data-bs-ride="carousel">
+					<!-- Indicators -->
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						<!-- Daha fazla slide eklemek isterseniz butonları çoğaltın -->
+					</div>
+
+					<!-- Carousel Inner -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="images/vakıf.png" class="d-block w-100" alt="Banner Resmi 1">
+						</div>
+						<div class="carousel-item">
+							<img src="images/pic01.jpg" class="d-block w-100" alt="Hasta Yakını Sosyal Yardımı">
+						</div>
+						<div class="carousel-item">
+							<img src="images/pic02.jpg" class="d-block w-100" alt="Dul ve Yetim Aile Desteği">
+						</div>
+						<!-- Daha fazla slide eklemek isterseniz burada devam edin -->
+					</div>
+
+					<!-- Controls -->
+					<button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Önceki</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Sonraki</span>
+					</button>
+				</div> <!-- /#banner -->
+			</div> <!-- /#banner-wrapper -->
 
 			<!-- Posts -->
 			<section class="wrapper style1">
@@ -196,13 +279,16 @@
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Bootstrap JS ve bağımlılıkları -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Mevcut Scriptleriniz -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
