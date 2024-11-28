@@ -1,294 +1,352 @@
 <!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	
-	<head>
-		<title>Yaşam Desteği Vakfı</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<html lang="tr">
 
-		<!-- Bootstrap CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+    <title>Yaşam Desteği Vakfı</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Favicon Ekle -->
-		<link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="images/icon/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="images/icon/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="images/icon/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="images/icon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
-		<link rel="manifest" href="images/icon/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Ek CSS (Carousel özelleştirmeleri için) -->
-		<style>
-			/* Carousel Wrapper - %80 Boyutlandırma */
-			#banner-wrapper {
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				/* Yüksekliği istenilen şekilde ayarlayın */
-				height: 80vh; /* Viewport yüksekliğinin %80'i */
-				overflow: hidden;
-			}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-			/* Bootstrap Carousel Ayarları */
-			#banner {
-				width: 80%; /* Genişliği %80 olarak ayarlayın */
-				height: 100%; /* Yüksekliği wrapper ile eşitleyin */
-			}
+    <!-- Font Awesome CSS (Ok ikonları için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-			#banner .carousel-item {
-				height: 100%;
-			}
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+    <link rel="manifest" href="images/icon/manifest.json">
+    <meta name="theme-color" content="#ffffff">
 
-			#banner .carousel-item img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+    <!-- Custom CSS -->
+    <style>
+        /* Carousel Wrapper */
+        #banner-wrapper {
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            position: relative;
+            margin-top: 76px; /* Eğer navbar varsa, onun yüksekliği kadar margin-top ekleyebilirsiniz */
+        }
 
-			/* Mobil cihazlar için banner yüksekliği */
-			@media (max-width: 768px) {
-				#banner-wrapper {
-					height: 50vh; /* Mobil cihazlar için daha küçük yükseklik */
-				}
-				#banner {
-					width: 90%; /* Mobilde genişliği artırabilirsiniz */
-				}
-			}
+        /* Carousel Container */
+        #banner {
+            width: 100%;
+            height: 100%;
+        }
 
-			@media (max-width: 480px) {
-				#banner-wrapper {
-					height: 40vh; /* Daha küçük mobil cihazlar için */
-				}
-				#banner {
-					width: 95%; /* Mobilde genişliği daha da artırabilirsiniz */
-				}
-			}
-		</style>
-	</head>
+        /* Carousel Items and Images */
+        #banner .carousel-item {
+            height: 100%;
+            background-color: #f8f9fa; /* Işıklandırma için açık bir arka plan rengi */
+        }
 
-	<body class="is-preload">
-		<div id="page-wrapper">
+        #banner .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-			<!-- Header -->
-			<div id="header">
-		
-				<!-- Logo -->
-				<!--<h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>-->
-		
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Anasayfa</a></li>
-						<li><a href="hakkimizda.html">Hakkımızda</a></li>
-						<li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-						<li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
-						<li><a href="https://lsc.hacettepe.edu.tr/">İletişim</a></li>
-					</ul>
-				</nav>
-		
-			</div> <!-- /#header -->
+        /* Carousel Controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin: 0 2rem;
+        }
 
-			<!-- Bootstrap Carousel Wrapper -->
-			<div id="banner-wrapper">
-				<!-- Bootstrap Carousel -->
-				<div id="banner" class="carousel slide" data-bs-ride="carousel">
-					<!-- Indicators -->
-					<div class="carousel-indicators">
-						<button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						<!-- Daha fazla slide eklemek isterseniz butonları çoğaltın -->
-					</div>
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: none;
+        }
 
-					<!-- Carousel Inner -->
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="images/vakıf.png" class="d-block w-100" alt="Banner Resmi 1">
-						</div>
-						<div class="carousel-item">
-							<img src="images/pic01.jpg" class="d-block w-100" alt="Hasta Yakını Sosyal Yardımı">
-						</div>
-						<div class="carousel-item">
-							<img src="images/pic02.jpg" class="d-block w-100" alt="Dul ve Yetim Aile Desteği">
-						</div>
-						<!-- Daha fazla slide eklemek isterseniz burada devam edin -->
-					</div>
+        .carousel-control-prev-icon::after,
+        .carousel-control-next-icon::after {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: #2c3e50; /* Ok ikonlarının rengi */
+        }
 
-					<!-- Controls -->
-					<button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Önceki</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Sonraki</span>
-					</button>
-				</div> <!-- /#banner -->
-			</div> <!-- /#banner-wrapper -->
+        .carousel-control-prev-icon::after {
+            content: '\f104'; /* Font Awesome sol ok ikonu */
+        }
 
-			<!-- Posts -->
-			<section class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<section class="col-6 col-12-narrower">
-							<div class="box post">
-								<a href="/sosyalyardim.html" class="image left">
-									<img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı" />
-								</a>
-								<div class="inner">
-									<h3><a href="/sosyalyardim.html">Hasta Yakını Sosyal Yardımı</a></h3>
-									<p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
-								</div>
-							</div>
-						</section>
-						<section class="col-6 col-12-narrower">
-							<div class="box post">
-								<a href="/dulyetim.html" class="image left">
-									<img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" />
-								</a>
-								<div class="inner">
-									<h3><a href="/dulyetim.html">Dul ve Yetim Aile Desteği</a></h3>
-									<p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını iyileştirme hedeflenmektedir.</p>
-								</div>
-							</div>
-						</section>
-					</div>
-					<div class="row">
-						<section class="col-6 col-12-narrower">
-							<div class="box post">
-								<a href="/ogrencibursu.html" class="image left">
-									<img src="images/pic03.jpg" alt="Öğrenci Bursu" />
-								</a>
-								<div class="inner">
-									<h3><a href="/ogrencibursu.html">Öğrenci Bursu</a></h3>
-									<p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
-								</div>
-							</div>
-						</section>
-						<section class="col-6 col-12-narrower">
-							<div class="box post">
-								<a href="arastirmadestek.html" class="image left">
-									<img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" />
-								</a>
-								<div class="inner">
-									<h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
-									<p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</section>
-			
-			<!-- Highlights -->
-			<section class="wrapper style1">
-				<div class="container">
-					<div class="row gtr-200">
-						<section class="col-4 col-12-narrower">
-							<div class="box highlight">
-								<a href="#" class="icon-link">
-									<i class="icon solid major fa-hand-holding-heart"></i>
-									 
-								</a>
-								
-								
-								<h3>Aktif projelerimiz</h3>
-								<p>Devam eden projelerimizle toplumun ihtiyaçlarına çözüm üretmeye ve kalıcı faydalar sağlamaya odaklanıyoruz.</p>
+        .carousel-control-next-icon::after {
+            content: '\f105'; /* Font Awesome sağ ok ikonu */
+        }
 
-								<br>
-							</div>
-						</section>
-						<section class="col-4 col-12-narrower">
-							<div class="box highlight">
-								<a href="#" class="icon-link">
-									<i class="icon solid major fa-seedling"></i>
-									 
-								</a>
-								<h3>Gündemdeki projeler</h3>
-								<p>Yaklaşan projelerimizle daha geniş kitlelere ulaşmayı ve yenilikçi çözümler sunmayı hedefliyoruz.</p>
-								<br>
-							</div>
-						</section>
-						<section class="col-4 col-12-narrower">
-							<div class="box highlight">
-								<a href="#" class="icon-link">
-									<i class="icon solid major fa-dove"></i>
-									 
-								</a>
-								<h3>Bizden haberlert</h3>
-								<p>Vakfımızdan en güncel duyuru ve gelişmeleri takip ederek çalışmalarımızdan haberdar olabilirsiniz.</p>
-								<br>
-							</div>
-						</section>
-					</div>
-				</div>
-			</section>
-			<!-- CTA -->
-				<section id="cta" class="wrapper style3">
-					<div class="container">
-						<header>
-							<h2>Bağışlarınız için IBAN adresimiz</h2>
-							<a href="bagisbilgileri.html" class="button">Bağış yap</a>
-						</header>
-					</div>
-				</section>
+        /* Carousel üzerine gelindiğinde kontrol butonları görünür olacak */
+        #banner:hover .carousel-control-prev,
+        #banner:hover .carousel-control-next {
+            opacity: 1;
+        }
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
+        /* Carousel Indicators */
+        .carousel-indicators {
+            bottom: 20px;
+        }
 
-						</div>
-					</div>
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
 
-					<!-- Icons -->
-						<!--<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
-						</ul>-->
+        .carousel-indicators button.active {
+            width: 12px;
+            height: 12px;
+            background-color: #3498db;
+        }
 
-					<!-- Copyright -->
-						<div class="copyright">
-							<ul class="menu">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="https://turkalpmd.com">TurkalpMD</a></li>
-							</ul>
-						</div>
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            #banner-wrapper {
+                height: 60vh;
+                margin-top: 66px;
+            }
+        }
 
-				</div>
+        @media (max-width: 768px) {
+            #banner-wrapper {
+                height: 50vh;
+            }
 
-		</div>
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 35px;
+                height: 35px;
+                margin: 0 1rem;
+            }
+        }
 
-		<!-- Bootstrap JS ve bağımlılıkları -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-		
-		<!-- Mevcut Scriptleriniz -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+        @media (max-width: 576px) {
+            #banner-wrapper {
+                height: 40vh;
+            }
+        }
 
-	</body>
+        /* Hover durumunda okların arka plan renginin maviye dönmesini engellemek */
+        .carousel-control-prev:focus,
+        .carousel-control-next:focus {
+            outline: none;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Okların tıklandığında arka plan renginin değişmesini engellemek */
+        .carousel-control-prev:active,
+        .carousel-control-next:active {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+            <!-- Navigation -->
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href="index.html">Anasayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
+                    <li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
+                    <li><a href="https://lsc.hacettepe.edu.tr/">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bootstrap Carousel Wrapper -->
+        <div id="banner-wrapper">
+            <!-- Bootstrap Carousel -->
+            <div id="banner" class="carousel slide hero-carousel" data-bs-ride="carousel">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#banner" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#banner" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- Carousel Inner -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/vakıf.png" alt="Banner Resmi 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Önceki</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Sonraki</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Posts -->
+        <section class="wrapper style1">
+            <div class="container">
+                <div class="row">
+                    <section class="col-6 col-12-narrower">
+                        <div class="box post">
+                            <a href="/sosyalyardim.html" class="image left">
+                                <img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı" />
+                            </a>
+                            <div class="inner">
+                                <h3><a href="/sosyalyardim.html">Hasta Yakını Sosyal Yardımı</a></h3>
+                                <p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık
+                                    sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-6 col-12-narrower">
+                        <div class="box post">
+                            <a href="/dulyetim.html" class="image left">
+                                <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" />
+                            </a>
+                            <div class="inner">
+                                <h3><a href="/dulyetim.html">Dul ve Yetim Aile Desteği</a></h3>
+                                <p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını
+                                    iyileştirme hedeflenmektedir.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="col-6 col-12-narrower">
+                        <div class="box post">
+                            <a href="/ogrencibursu.html" class="image left">
+                                <img src="images/pic03.jpg" alt="Öğrenci Bursu" />
+                            </a>
+                            <div class="inner">
+                                <h3><a href="/ogrencibursu.html">Öğrenci Bursu</a></h3>
+                                <p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin
+                                    başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-6 col-12-narrower">
+                        <div class="box post">
+                            <a href="arastirmadestek.html" class="image left">
+                                <img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" />
+                            </a>
+                            <div class="inner">
+                                <h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
+                                <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata
+                                    geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="wrapper style1">
+            <div class="container">
+                <div class="row gtr-200">
+                    <section class="col-4 col-12-narrower">
+                        <div class="box highlight">
+                            <a href="#" class="icon-link">
+                                <i class="icon solid major fa-hand-holding-heart"></i>
+                            </a>
+                            <h3>Aktif projelerimiz</h3>
+                            <p>Devam eden projelerimizle toplumun ihtiyaçlarına çözüm üretmeye ve kalıcı faydalar
+                                sağlamaya odaklanıyoruz.</p>
+                        </div>
+                    </section>
+                    <section class="col-4 col-12-narrower">
+                        <div class="box highlight">
+                            <a href="#" class="icon-link">
+                                <i class="icon solid major fa-seedling"></i>
+                            </a>
+                            <h3>Gündemdeki projeler</h3>
+                            <p>Yaklaşan projelerimizle daha geniş kitlelere ulaşmayı ve yenilikçi çözümler sunmayı
+                                hedefliyoruz.</p>
+                        </div>
+                    </section>
+                    <section class="col-4 col-12-narrower">
+                        <div class="box highlight">
+                            <a href="#" class="icon-link">
+                                <i class="icon solid major fa-dove"></i>
+                            </a>
+                            <h3>Bizden haberler</h3>
+                            <p>Vakfımızdan en güncel duyuru ve gelişmeleri takip ederek çalışmalarımızdan haberdar
+                                olabilirsiniz.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="wrapper style3">
+            <div class="container">
+                <header>
+                    <h2>Bağışlarınız için IBAN adresimiz</h2>
+                    <a href="bagisbilgileri.html" class="button">Bağış yap</a>
+                </header>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div class="container">
+                <!-- Footer content can be added here if needed -->
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Yaşam Desteği Vakfı. Tüm hakları saklıdır.</li>
+                    <li>Tasarım: <a href="https://turkalpmd.com">TurkalpMD</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS ve bağımlılıkları -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Mevcut Scriptleriniz -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
 </html>
