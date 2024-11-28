@@ -15,14 +15,14 @@
     <!-- Font Awesome CSS (Ok ikonları için) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Favicon Links -->
+    <!-- Favicon Bağlantıları -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
     <link rel="manifest" href="images/icon/manifest.json">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Custom CSS -->
+    <!-- Özel CSS -->
     <style>
         /* Carousel Wrapper */
         #banner-wrapper {
@@ -30,7 +30,7 @@
             height: 70vh;
             overflow: hidden;
             position: relative;
-            margin-top: 76px; /* Eğer navbar varsa, onun yüksekliği kadar margin-top ekleyebilirsiniz */
+            margin-top: 76px; /* Navbar yüksekliği */
         }
 
         /* Carousel Container */
@@ -42,7 +42,7 @@
         /* Carousel Items and Images */
         #banner .carousel-item {
             height: 100%;
-            background-color: #f8f9fa; /* Işıklandırma için açık bir arka plan rengi */
+            background-color: #f8f9fa;
         }
 
         #banner .carousel-item img {
@@ -56,32 +56,29 @@
         .carousel-control-prev,
         .carousel-control-next {
             width: 10px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
+            height: 10px;
+            background: none;
+            border: none;
+            opacity: 1;
+            transition: none;
             top: 50%;
             transform: translateY(-50%);
-            opacity: 0;
-            transition: all 0.3s ease;
-            margin: 0 2rem;
         }
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
+            width: 30px;
+            height: 30px;
             background: none;
+            background-size: 100%, 100%;
         }
 
         .carousel-control-prev-icon::after,
         .carousel-control-next-icon::after {
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
-            font-size: 1.2rem;
-            color: #2c3e50; /* Ok ikonlarının rengi */
+            font-size: 2rem;
+            color: rgba(154, 152, 152, 0.9);
         }
 
         .carousel-control-prev-icon::after {
@@ -92,10 +89,22 @@
             content: '\f105'; /* Font Awesome sağ ok ikonu */
         }
 
-        /* Carousel üzerine gelindiğinde kontrol butonları görünür olacak */
-        #banner:hover .carousel-control-prev,
-        #banner:hover .carousel-control-next {
-            opacity: 1;
+        /* Remove background and border on focus/active */
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover,
+        .carousel-control-prev:focus,
+        .carousel-control-next:focus,
+        .carousel-control-prev:active,
+        .carousel-control-next:active {
+            background: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Remove tap highlight color on mobile devices */
+        .carousel-control-prev,
+        .carousel-control-next {
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Carousel Indicators */
@@ -132,11 +141,9 @@
                 height: 50vh;
             }
 
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 35px;
-                height: 35px;
-                margin: 0 1rem;
+            .carousel-control-prev-icon::after,
+            .carousel-control-next-icon::after {
+                font-size: 1.5rem;
             }
         }
 
@@ -144,20 +151,11 @@
             #banner-wrapper {
                 height: 40vh;
             }
-        }
 
-        /* Hover durumunda okların arka plan renginin maviye dönmesini engellemek */
-        .carousel-control-prev:focus,
-        .carousel-control-next:focus {
-            outline: none;
-            box-shadow: none;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Okların tıklandığında arka plan renginin değişmesini engellemek */
-        .carousel-control-prev:active,
-        .carousel-control-next:active {
-            background-color: rgba(255, 255, 255, 0.8);
+            .carousel-control-prev-icon::after,
+            .carousel-control-next-icon::after {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -182,7 +180,7 @@
         <!-- Bootstrap Carousel Wrapper -->
         <div id="banner-wrapper">
             <!-- Bootstrap Carousel -->
-            <div id="banner" class="carousel slide hero-carousel" data-bs-ride="carousel">
+            <div id="banner" class="carousel slide" data-bs-ride="carousel">
                 <!-- Indicators -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
@@ -205,15 +203,18 @@
 
                 <!-- Controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Önceki</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Sonraki</span>
                 </button>
             </div>
         </div>
+
+        <!-- Posts -->
+        <!-- Bu kısım aynı kaldı -->
 
         <!-- Posts -->
         <section class="wrapper style1">
@@ -226,8 +227,7 @@
                             </a>
                             <div class="inner">
                                 <h3><a href="/sosyalyardim.html">Hasta Yakını Sosyal Yardımı</a></h3>
-                                <p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık
-                                    sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
+                                <p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
                             </div>
                         </div>
                     </section>
@@ -238,8 +238,7 @@
                             </a>
                             <div class="inner">
                                 <h3><a href="/dulyetim.html">Dul ve Yetim Aile Desteği</a></h3>
-                                <p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını
-                                    iyileştirme hedeflenmektedir.</p>
+                                <p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını iyileştirme hedeflenmektedir.</p>
                             </div>
                         </div>
                     </section>
@@ -252,8 +251,7 @@
                             </a>
                             <div class="inner">
                                 <h3><a href="/ogrencibursu.html">Öğrenci Bursu</a></h3>
-                                <p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin
-                                    başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
+                                <p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
                             </div>
                         </div>
                     </section>
@@ -264,15 +262,13 @@
                             </a>
                             <div class="inner">
                                 <h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
-                                <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata
-                                    geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
+                                <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
         </section>
-
         <!-- Highlights -->
         <section class="wrapper style1">
             <div class="container">
