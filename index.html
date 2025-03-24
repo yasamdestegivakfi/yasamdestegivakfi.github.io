@@ -37,12 +37,17 @@
         #banner {
             width: 100%;
             height: 100%;
+            background-color: #f8f9fa;
         }
 
         /* Carousel Items and Images */
         #banner .carousel-item {
             height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #f8f9fa;
+            transition: transform .6s ease-in-out;
         }
 
         #banner .carousel-item img {
@@ -50,6 +55,8 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            max-height: 100%;
+            transition: opacity 0.4s ease;
         }
 
         /* Carousel Controls */
@@ -100,34 +107,27 @@
             outline: none;
             box-shadow: none;
         }
-
-        /* Remove tap highlight color on mobile devices */
-        .carousel-control-prev,
-        .carousel-control-next {
-            -webkit-tap-highlight-color: transparent;
-        }
-
         /* Carousel Indicators */
         .carousel-indicators {
             bottom: 20px;
+            z-index: 10;
         }
 
         .carousel-indicators button {
-            width: 10px;
-            height: 10px;
-            border-radius: 10%;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
             border: none;
             margin: 0 5px;
             transition: all 0.3s ease;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
 
         .carousel-indicators button.active {
-            width: 5px;
-            height: 5px;
-            background-color: #b4b8ba;
-        }
-
+            width: 14px;
+            height: 14px;
+            background-color: rgba(255, 255, 255, 0.9);
         /* Responsive Adjustments */
         @media (max-width: 992px) {
             #banner-wrapper {
@@ -145,9 +145,38 @@
             .carousel-control-next-icon::after {
                 font-size: 1.5rem;
             }
+            
+            .carousel-indicators button {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .carousel-indicators button.active {
+                width: 12px;
+                height: 12px;
+            }
         }
 
         @media (max-width: 576px) {
+            #banner-wrapper {
+                height: 40vh;
+            }
+
+            .carousel-control-prev-icon::after,
+            .carousel-control-next-icon::after {
+                font-size: 1.2rem;
+            }
+            
+            #banner .carousel-item img {
+                object-position: center top;
+            }
+        }
+        
+        /* Add image loading optimization */
+        img.carousel-image {
+            will-change: transform;
+            backface-visibility: hidden;
+        }
             #banner-wrapper {
                 height: 40vh;
             }
@@ -160,19 +189,19 @@
     </style>
 </head>
 
-<body class="is-preload">
-    <div id="page-wrapper">
-
-        <!-- Header -->
-        <div id="header">
-            <!-- Navigation -->
-			<h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
-            <nav id="nav">
-                <ul>
-                    <li class="current"><a href="index.html">Anasayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-                    <li><a href="vakifsenedi.html">Vakıf Senedi</a></li>
+                <!-- Carousel Inner -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/banner.png" alt="Banner Resmi 1" class="carousel-image" loading="eager">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner2.png" alt="Hasta Yakını Sosyal Yardımı" class="carousel-image" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" class="carousel-image" loading="lazy">
+                    </div>
+                </div>
+                    <!-- <li><a href="vakifsenedi.html">Vakıf Senedi</a></li> -->
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
             </nav>
@@ -305,11 +334,37 @@
                         </div>
                     </section>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section id="cta" class="wrapper style3">
+    <!-- Scripts -->
+    <!-- Bootstrap JS ve bağımlılıkları -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Carousel enhancement script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adjust carousel for better image display
+            var carousel = document.getElementById('banner');
+            var carouselItems = carousel.querySelectorAll('.carousel-item');
+            
+            // Initialize the carousel with custom options
+            var bsCarousel = new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                wrap: true,
+                keyboard: true
+            });
+            
+            // Add fade effect to carousel transitions
+            carouselItems.forEach(function(item) {
+                item.addEventListener('transitionend', function() {
+                    if (item.classList.contains('active')) {
+                        item.querySelector('img').style.opacity = 1;
+                    } else {
+                        item.querySelector('img').style.opacity = 0.8;
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Mevcut Scriptleriniz -->
+    <script src="assets/js/jquery.min.js"></script>
             <div class="container">
                 <header>
                     <h2>Bağışlarınız için IBAN adresimiz</h2>
