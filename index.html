@@ -15,9 +15,6 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
@@ -26,39 +23,39 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-        /* Improved Carousel Styles (Swiper Versiyonu) */
+        /* Improved Carousel Styles */
         #banner-wrapper {
             position: relative;
             margin-top: 76px;
             overflow: hidden;
         }
-
-        .swiper {
+    
+        .carousel {
             height: 70vh;
             min-height: 400px;
         }
-
-        .swiper-wrapper {
+    
+        .carousel-inner {
             height: 100%;
             border-radius: 4px;
         }
-
-        .swiper-slide {
+    
+        .carousel-item {
             height: 100%;
             transition: transform 0.6s ease-in-out;
         }
-
-        .swiper-slide img {
+    
+        .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center center;
             image-rendering: -webkit-optimize-contrast;
         }
-
-        /* Swiper Navigation Controls */
-        .swiper-button-prev,
-        .swiper-button-next {
+    
+        /* Controls - Improved */
+        .carousel-control-prev,
+        .carousel-control-next {
             width: 8%;
             max-width: 60px;
             opacity: 0.7;
@@ -66,51 +63,69 @@
             background: transparent;
             border: none;
         }
-
-        .swiper-button-prev:hover,
-        .swiper-button-next:hover {
+    
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
             opacity: 1;
             background: transparent;
         }
-
-        .swiper-button-prev:focus,
-        .swiper-button-next:focus {
+    
+        /* Remove blue outline on focus */
+        .carousel-control-prev:focus,
+        .carousel-control-next:focus {
             outline: none;
             box-shadow: none;
         }
-
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
-            font-size: 2.5rem;
+    
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+            width: 2.5rem;
+            height: 2.5rem;
+            background-size: 100%;
         }
-
-        /* Optional: Swiper Pagination (Gizlemek için display: none) */
-        .swiper-pagination {
+    
+        /* Hide carousel indicators */
+        .carousel-indicators {
             display: none;
         }
-
-        /* Responsive Ayarlar */
+    
+        /* Captions */
+        .carousel-caption {
+            background: rgba(0,0,0,0.4);
+            padding: 1.5rem;
+            border-radius: 4px;
+            right: 10%;
+            left: 10%;
+            bottom: 2rem;
+        }
+    
+        /* Improved Responsive */
         @media (max-width: 992px) {
-            .swiper {
+            .carousel {
                 height: 60vh;
                 min-height: 350px;
             }
+            .carousel-caption {
+                bottom: 1rem;
+                padding: 1rem;
+            }
         }
-
+    
         @media (max-width: 768px) {
-            .swiper {
+            .carousel {
                 height: 50vh;
                 min-height: 300px;
             }
-            .swiper-button-prev::after,
-            .swiper-button-next::after {
-                font-size: 2rem;
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 2rem;
+                height: 2rem;
             }
         }
-
+    
         @media (max-width: 576px) {
-            .swiper {
+            .carousel {
                 height: 40vh;
                 min-height: 250px;
             }
@@ -119,74 +134,6 @@
             }
         }
     </style>
-    
-</head>
-
-<body class="is-preload">
-    <div id="page-wrapper">
-        <!-- Header -->
-        <div id="header">
-            <h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
-            <nav id="nav">
-                <ul>
-                    <li class="current"><a href="index.html">Anasayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Swiper Carousel -->
-        <div id="banner-wrapper">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="images/banner.png" class="d-block w-100" alt="Banner 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/banner2.png" class="d-block w-100" alt="Banner 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/pic02.jpg" class="d-block w-100" alt="Banner 3">
-                    </div>
-                </div>
-                <!-- Swiper Navigation Controls -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <!-- Optional: Swiper Pagination -->
-                <!-- <div class="swiper-pagination"></div> -->
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- Scripts -->
-    <!-- jQuery (varsa) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <script>
-        var swiper = new Swiper('.swiper', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            // Eğer pagination isterseniz aşağıdaki satırları aktif edebilirsiniz:
-            // pagination: {
-            //     el: '.swiper-pagination',
-            //     clickable: true,
-            // },
-        });
-    </script>
     
 </head>
 
