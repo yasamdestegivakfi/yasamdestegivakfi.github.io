@@ -6,14 +6,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
@@ -23,532 +25,907 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-        /* Improved Carousel Styles */
-        #banner-wrapper {
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--bg-white) 0%, #f1f5f9 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: var(--primary-dark) !important;
+            transform: translateY(-1px);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
             position: relative;
-            margin-top: 76px;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background-color: rgba(37, 99, 235, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin-top: 80px;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
             overflow: hidden;
         }
-    
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #f97316 100%);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 4rem 0;
+            background: var(--bg-white);
+        }
+
         .carousel {
-            height: 70vh;
-            min-height: 400px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border-radius: 8px;
-        }
-    
-        .carousel-inner {
-            height: 100%;
-            border-radius: 8px;
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 500px;
         }
-    
+
         .carousel-item {
-            height: 100%;
-            transition: transform 0.8s ease-in-out;
-            background-color: #000;
+            height: 500px;
+            position: relative;
         }
-    
+
         .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center center;
-            image-rendering: -webkit-optimize-contrast;
-            transition: opacity 0.3s;
+        }
+
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .carousel-caption {
+            bottom: 3rem;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .carousel-caption p {
+            font-size: 1.1rem;
             opacity: 0.9;
         }
-        
-        .carousel-item:hover img {
-            opacity: 1;
-        }
-    
-        /* Controls - Improved */
+
         .carousel-control-prev,
         .carousel-control-next {
-            width: 10%;
-            max-width: 80px;
-            opacity: 0.6;
-            transition: opacity 0.2s ease;
-            background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
-            border: none;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: auto 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
-        
-        .carousel-control-next {
-            background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
-        }
-    
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            opacity: 0.9;
-        }
-    
-        /* Remove blue outline on focus */
-        .carousel-control-prev:focus,
-        .carousel-control-next:focus {
-            outline: none;
-            box-shadow: none;
-        }
-    
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.6));
-            width: 3rem;
-            height: 3rem;
-            background-size: 100%;
-        }
-    
-        /* Show carousel indicators */
-        .carousel-indicators {
-            display: flex;
-            bottom: 20px;
-        }
-        
+
         .carousel-indicators button {
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.5);
+            border: 2px solid rgba(255,255,255,0.8);
             margin: 0 6px;
-            transition: background-color 0.3s;
-            border: 2px solid rgba(255,255,255,0.7) !important;
         }
-        
+
         .carousel-indicators button.active {
             background-color: white;
-            width: 14px;
-            height: 14px;
+            transform: scale(1.2);
         }
-    
-        /* Captions */
-        .carousel-caption {
-            background: rgba(0,0,0,0.5);
-            padding: 1.5rem;
-            border-radius: 8px;
-            right: 15%;
-            left: 15%;
-            bottom: 3rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
         }
-        
-        .carousel-caption h5 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card .image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .image img {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
-    
-        /* Improved Responsive */
-        @media (max-width: 992px) {
-            .carousel {
-                height: 60vh;
-                min-height: 350px;
-            }
-            .carousel-caption {
-                bottom: 2rem;
-                padding: 1rem;
-            }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-    
-        @media (max-width: 768px) {
-            .carousel {
-                height: 50vh;
-                min-height: 300px;
-            }
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                width: 2.2rem;
-                height: 2.2rem;
-            }
-            .carousel-caption {
-                bottom: 1.5rem;
-                right: 10%;
-                left: 10%;
-            }
-            .carousel-indicators button {
-                width: 10px;
-                height: 10px;
-                margin: 0 4px;
-            }
+
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background: var(--bg-white);
         }
-    
-        @media (max-width: 576px) {
-            .carousel {
-                height: 40vh;
-                min-height: 250px;
-            }
-            #banner-wrapper {
-                margin-top: 60px;
-            }
-            .carousel-caption {
-                bottom: 1rem;
-                padding: 0.75rem;
-            }
-            .carousel-caption h5 {
-                font-size: 1.2rem;
-            }
-            .carousel-indicators {
-                bottom: 10px;
-            }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 100%;
         }
-    /* Container for all cards */
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        padding: 40px 0;
-    }
 
-    /* Row for the Başkan (bu örnekte kullanılmayacak) */
-    .baskan-row {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
 
-    /* Row for the Üyeler / Destekçiler */
-    .uyeler-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    /* Row for the Denetmen (bu örnekte kullanılmayacak) */
-    .denetmen-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    /* Individual Card Styling */
-    .card {
-        width: 250px;
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        background-color: #fff;
-        position: relative;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        margin-bottom: 15px;
-    }
-
-    .card-title {
-        font-size: 1.2em;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #333;
-    }
-
-    .card-subtitle {
-        font-size: 1em;
-        color: #555;
-    }
-
-    /* Hover Effect */
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .uyeler-row {
-            flex-direction: column;
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
         }
 
-        .card {
-            width: 80%;
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
         }
-    }        
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-btn:hover {
+            background: #d97706;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Supporters Section */
+        .supporters-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .supporter-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .supporter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .supporter-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .carousel {
+                height: 300px;
+            }
+
+            .carousel-item {
+                height: 300px;
+            }
+
+            .carousel-caption h5 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar-nav {
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .carousel {
+                height: 250px;
+            }
+
+            .carousel-item {
+                height: 250px;
+            }
+
+            .service-card,
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
-    
 </head>
 
-<body class="is-preload">
-    <div id="page-wrapper">
-        <!-- Header -->
-        <div id="header">
-            <h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
-            <nav id="nav">
-                <ul>
-                    <li class="current"><a href="index.html">Anasayfa</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Carousel -->
-        <div id="banner-wrapper">
-            <div id="banner" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heart me-2"></i>
+                    Yaşam Desteği Vakfı
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="yonetimkurulu.html">Yönetim Kurulu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html">İletişim</a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </nav>
+    </header>
 
-                <div class="carousel-inner">
-                    <!--
-                    <div class="carousel-item active">
-                        <img src="images/banner5.png" class="d-block w-100" alt="Banner 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Birlikte minik kalplere umut olalım</h5>
-                             <p>Example description text for the first slide</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Yaşam Desteği Vakfı</h1>
+                <p class="hero-subtitle">Toplumun ihtiyaçlarına çözüm üretmeye ve kalıcı faydalar sağlamaya odaklanıyoruz. Birlikte minik kalplere umut olalım.</p>
+                <a href="#services" class="hero-btn">
+                    <i class="fas fa-arrow-down me-2"></i>
+                    Hizmetlerimizi Keşfedin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
                         </div>
-                    -->
-                    
-                    <!--<div class="carousel-item active">
-                        <a href="hakkimizda.html">
-                            <img src="images/bannerdiyanettv.jpg" class="d-block w-100" alt="Diyanet TV yayını">
-                        </a>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Diyanet TV yayını</h5>
-                            <p>Example description text for the first slide</p>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/banner2.png" alt="Yaşam Desteği Vakfı">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Birlikte minik kalplere umut olalım</h5>
+                                    <p>Toplumun ihtiyaçlarına çözüm üretiyoruz</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/banner5.png" alt="Sosyal Yardım">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Sosyal Yardım ve Destek</h5>
+                                    <p>İhtiyaç sahiplerine umut oluyoruz</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/banner6.png" alt="Eğitim Desteği">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Eğitim ve Araştırma Desteği</h5>
+                                    <p>Geleceğin başarılı bireylerini yetiştiriyoruz</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>-->                    
-                    <div class="carousel-item active">
-                        <a href="iletisim.html">
-                            <img src="images/banner2.png" class="d-block w-100" alt="Banner 2">
-                        </a>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
-                    <!--<div class="carousel-item">
-                        <a href="yonetimkurulu.html">
-                            <img src="images/banner6.png" class="d-block w-100" alt="Banner 3">
-                        </a>
-                    </div>-->
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Önceki</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Sonraki</span>
-                </button>
             </div>
         </div>
+    </section>
 
-        <!-- Posts -->
-        <!-- Bu kısım aynı kaldı -->
-
-        <!-- Posts -->
-        <section class="wrapper style1">
-            <div class="container">
-                <div class="row">
-                    <section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="/sosyalyardim.html" class="image left">
-                                <img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="/sosyalyardim.html">Hasta Yakını Sosyal Yardımı</a></h3>
-                                <p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="/dulyetim.html" class="image left">
-                                <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="/dulyetim.html">Dul ve Yetim Aile Desteği</a></h3>
-                                <p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını iyileştirme hedeflenmektedir.</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="row">
-                    <section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="/ogrencibursu.html" class="image left">
-                                <img src="images/pic03.jpg" alt="Öğrenci Bursu" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="/ogrencibursu.html">Öğrenci Bursu</a></h3>
-                                <p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="arastirmadestek.html" class="image left">
-                                <img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
-                                <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="row">
-                    <section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="/index.html" class="image left">
-                                <img src="images/banner.png" alt="Öğrenci Bursu" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="/index.html">Transplantasyon</a></h3>
-                                <p>Transplantasyon sürecinde hasta ve aile desteği.</p>
-                            </div>
-                        </div>
-                    </section>
-                    <!--<section class="col-6 col-12-narrower">
-                        <div class="box post">
-                            <a href="arastirmadestek.html" class="image left">
-                                <img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" />
-                            </a>
-                            <div class="inner">
-                                <h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
-                                <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
-                            </div>
-                        </div>
-                    </section>-->
-                </div>
-          
-            </div>
-        </section>
-        <!-- Highlights -->
-        <section class="wrapper style1">
-            <div class="container">
-                <div class="row gtr-200">
-                    <section class="col-4 col-12-narrower">
-                        <div class="box highlight">
-                            <a href="#" class="icon-link">
-                                <i class="icon solid major fa-hand-holding-heart"></i>
-                            </a>
-                            <h3>Aktif projelerimiz</h3>
-                            <p>Devam eden projelerimizle toplumun ihtiyaçlarına çözüm üretmeye ve kalıcı faydalar
-                                sağlamaya odaklanıyoruz.</p>
-                        </div>
-                    </section>
-                    <section class="col-4 col-12-narrower">
-                        <div class="box highlight">
-                            <a href="#" class="icon-link">
-                                <i class="icon solid major fa-seedling"></i>
-                            </a>
-                            <h3>Gündemdeki projeler</h3>
-                            <p>Yaklaşan projelerimizle daha geniş kitlelere ulaşmayı ve yenilikçi çözümler sunmayı
-                                hedefliyoruz.</p>
-                        </div>
-                    </section>
-                    <section class="col-4 col-12-narrower">
-                        <div class="box highlight">
-                            <a href="#" class="icon-link">
-                                <i class="icon solid major fa-dove"></i>
-                            </a>
-                            <h3>Bizden haberler</h3>
-                            <p>Vakfımızdan en güncel duyuru ve gelişmeleri takip ederek çalışmalarımızdan haberdar
-                                olabilirsiniz.</p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section id="cta" class="wrapper style3">
-            <div class="container">
-                <header>
-                    <h2>Bağışlarınız için IBAN adresimiz</h2>
-                    <a href="bagisbilgileri.html" class="button">Bağış yap</a>
-                </header>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <div id="footer">
-            <div class="container">
-                <!-- Footer content can be added here if needed -->
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Hizmetlerimiz</h2>
+                <p>Toplumun farklı kesimlerine yönelik kapsamlı destek programlarımız</p>
             </div>
             
-            <!-- Bu style bloğu ile .major altında çıkan çizgiyi devre dışı bırakıyoruz -->
-            <style>
-              /* Sadece #footer içindeki .major başlıklarını hedefliyoruz */
-              #footer .major::before,
-              #footer .major::after {
-                content: none !important;
-                border: none !important;
-                box-shadow: none !important;
-              }
-            </style>
-        
-        <div class="card-container">
-            <header class="major">
-                <h2>Destekçilerimiz</h2>
-            </header>
-            <div class="uyeler-row">
-                <a href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
-                    <div class="card">
-                        <img src="images/lscsupport1.jpg" alt="Destekçi Logo">
-                        <div class="card-title"></div>
-                        <div class="card-subtitle"></div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="sosyalyardim.html" class="service-card fade-in">
+                        <div class="image">
+                            <img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı" />
+                        </div>
+                        <h3>Hasta Yakını Sosyal Yardımı</h3>
+                        <p>Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="dulyetim.html" class="service-card fade-in">
+                        <div class="image">
+                            <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" />
+                        </div>
+                        <h3>Dul ve Yetim Aile Desteği</h3>
+                        <p>Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını iyileştirme hedeflenmektedir.</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="ogrencibursu.html" class="service-card fade-in">
+                        <div class="image">
+                            <img src="images/pic03.jpg" alt="Öğrenci Bursu" />
+                        </div>
+                        <h3>Öğrenci Bursu</h3>
+                        <p>Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="arastirmadestek.html" class="service-card fade-in">
+                        <div class="image">
+                            <img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" />
+                        </div>
+                        <h3>Bilimsel Araştırma Proje Desteği</h3>
+                        <p>Bilimsel araştırmalara maddi kaynak sağlayarak, yenilikçi projelerin hayata geçirilmesine ve bilimsel gelişmelere katkıda bulunma amaçlanmaktadır.</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="index.html" class="service-card fade-in">
+                        <div class="image">
+                            <img src="images/banner.png" alt="Transplantasyon" />
+                        </div>
+                        <h3>Transplantasyon</h3>
+                        <p>Transplantasyon sürecinde hasta ve aile desteği sağlıyoruz.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Özelliklerimiz</h2>
+                <p>Vakfımızın temel değerleri ve çalışma prensipleri</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Aktif Projelerimiz</h3>
+                        <p>Devam eden projelerimizle toplumun ihtiyaçlarına çözüm üretmeye ve kalıcı faydalar sağlamaya odaklanıyoruz.</p>
                     </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Gündemdeki Projeler</h3>
+                        <p>Yaklaşan projelerimizle daha geniş kitlelere ulaşmayı ve yenilikçi çözümler sunmayı hedefliyoruz.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <h3>Bizden Haberler</h3>
+                        <p>Vakfımızdan en güncel duyuru ve gelişmeleri takip ederek çalışmalarımızdan haberdar olabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>Bağışlarınız için IBAN adresimiz</h2>
+                <a href="bagisbilgileri.html" class="cta-btn">
+                    <i class="fas fa-heart me-2"></i>
+                    Bağış Yap
                 </a>
-                <!-- Diğer destekçiler için benzer kartlar ekleyebilirsiniz -->
-                <!--
-                <div class="card">
-                    <img src="images/ornek-destekci.jpg" alt="Destekçi Logo">
-                    <div class="card-title">Destekçi Adı</div>
-                    <div class="card-subtitle">Açıklama veya İletişim Bilgileri</div>
-                </div>
-                -->
             </div>
         </div>
+    </section>
+
+    <!-- Supporters Section -->
+    <section class="supporters-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Destekçilerimiz</h2>
+                <p>Birlikte daha güçlüyüz</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener" class="supporter-card fade-in">
+                        <img src="images/lscsupport1.jpg" alt="LSC Destekçi Logo">
+                    </a>
+                </div>
+            </div>
         </div>
-        
-            <!-- Copyright -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>Yaşam Desteği Vakfı</h4>
+                    <p>Toplumun ihtiyaçlarına çözüm üretiyoruz</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="gizlilik.html">Gizlilik</a>
+                    <a href="kosullar.html">Kullanım Şartları</a>
+                    <a href="https://turkalpmd.com" target="_blank" rel="noopener">Tasarım: TurkalpMD</a>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
             <div class="copyright">
-                <div class="container py-4">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-md-6"></div>
-                            <p class="mb-2 mb-md-0">&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <ul class="footer-links list-inline mb-0">
-                                <li class="list-inline-item"><a href="gizlilik.html">Gizlilik</a></li>
-                                <li class="list-inline-item"><a href="kosullar.html">Kullanım Şartları</a></li>
-                                <li class="list-inline-item">Tasarım: <a href="https://turkalpmd.com" class="link-hover" target="_blank" rel="noopener">TurkalpMD</a></li>
-                            </ul>
-                            <div class="social-icons mt-3">
-                                <a href="#" class="me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
     <!-- Scripts -->
-    <!-- Bootstrap JS ve bağımlılıkları -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Mevcut Scriptleriniz -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
