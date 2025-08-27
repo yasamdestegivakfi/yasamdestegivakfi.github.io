@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 function Header() {
 	return (
-		<header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
+		<header className="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200/70">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 				<a href="/" className="text-xl font-semibold tracking-tight">Yaşam Desteği Vakfı</a>
 				<nav className="hidden md:flex items-center gap-8 text-sm">
@@ -36,36 +36,41 @@ function Home() {
 	return (
 		<main className="flex-1 pt-16">
 			<section className="relative">
-				<div className="aspect-[16/7] sm:aspect-[16/6] md:aspect-[16/5] bg-black">
-					<img src="/images/banner2.png" alt="Banner" className="w-full h-full object-cover opacity-90"/>
+				<div className="aspect-[16/7] sm:aspect-[16/6] md:aspect-[16/5] bg-gradient-to-br from-sky-100 to-sky-200">
+					<img src="/images/banner2.png" alt="Banner" className="w-full h-full object-cover opacity-90 mix-blend-multiply"/>
+					<div className="absolute inset-0 flex items-end justify-center pb-8">
+						<div className="bg-black/40 text-white px-6 py-3 rounded-lg backdrop-blur-sm border border-white/20 shadow-md">
+							<h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-wide">Birlikte minik kalplere umut olalım</h1>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section className="py-12 sm:py-16">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid md:grid-cols-2 gap-8">
-						<a href="/sosyalyardim.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
+						<a href="/sosyalyardim.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-100">
 							<img src="/images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı" className="w-full h-full object-cover"/>
 							<div className="p-5">
 								<h3 className="text-lg font-semibold mb-2 group-hover:text-brand-primary">Hasta Yakını Sosyal Yardımı</h3>
 								<p className="text-sm text-gray-600">Hasta yakınlarına, zorlu süreçlerinde maddi ve manevi destek sağlayarak, hastalık sürecinde yaşanan yükü hafifletmek amaçlanmıştır.</p>
 							</div>
 						</a>
-						<a href="/dulyetim.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
+						<a href="/dulyetim.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-100">
 							<img src="/images/pic02.jpg" alt="Dul ve Yetim Aile Desteği" className="w-full h-full object-cover"/>
 							<div className="p-5">
 								<h3 className="text-lg font-semibold mb-2 group-hover:text-brand-primary">Dul ve Yetim Aile Desteği</h3>
 								<p className="text-sm text-gray-600">Dul ve yetim ailelere ekonomik ve sosyal destek sunarak, yaşam koşullarını iyileştirme hedeflenmektedir.</p>
 							</div>
 						</a>
-						<a href="/ogrencibursu.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
+						<a href="/ogrencibursu.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-100">
 							<img src="/images/pic03.jpg" alt="Öğrenci Bursu" className="w-full h-full object-cover"/>
 							<div className="p-5">
 								<h3 className="text-lg font-semibold mb-2 group-hover:text-brand-primary">Öğrenci Bursu</h3>
 								<p className="text-sm text-gray-600">Eğitim hayatında maddi zorluk yaşayan öğrencilere burs desteği sağlayarak, geleceğin başarılı bireylerini yetiştirmeyi amaçlamaktadır.</p>
 							</div>
 						</a>
-						<a href="/arastirmadestek.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
+						<a href="/arastirmadestek.html" className="group grid grid-cols-[140px,1fr] gap-4 bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-100">
 							<img src="/images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği" className="w-full h-full object-cover"/>
 							<div className="p-5">
 								<h3 className="text-lg font-semibold mb-2 group-hover:text-brand-primary">Bilimsel Araştırma Proje Desteği</h3>
@@ -96,10 +101,10 @@ function Home() {
 				</div>
 			</section>
 
-			<section className="py-16 bg-brand-primary/10">
+			<section className="py-16 bg-gradient-to-br from-sky-50 to-sky-100">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<h2 className="text-2xl font-semibold mb-4">Bağışlarınız için IBAN adresimiz</h2>
-					<a href="/bagisbilgileri.html" className="inline-block px-6 py-3 rounded-lg bg-brand-primary text-white font-medium hover:opacity-90">Bağış yap</a>
+					<a href="/bagisbilgileri.html" className="inline-block px-6 py-3 rounded-lg bg-brand-primary text-white font-medium shadow hover:shadow-md hover:opacity-95">Bağış yap</a>
 				</div>
 			</section>
 
