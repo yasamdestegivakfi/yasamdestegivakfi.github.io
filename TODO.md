@@ -61,6 +61,7 @@ Bu dosya, Windows ortamından Linux’a geçtiğimizde adım adım uygulanacak i
 - [x] Performans: Resimlere `loading="lazy"`
 - [x] Erişilebilirlik: `aria-label`, alt text’ler, carousel kontrolleri ve sosyal ikonlarda uygun `aria-*`
 - [x] Eski script’leri kaldır: jQuery, dropotron vb. (React ile native çöz)
+- [x] Derin link 404 için `HashRouter` kullanıldı
 
 ## 10) index.html Düzenlemeleri
 - [x] Viewport ve `theme-color` meta tag’ları
@@ -103,7 +104,7 @@ jobs:
       - uses: actions/deploy-pages@v1
 ```
 
-- [ ] Repo Settings > Pages > Source: `gh-pages` branch olarak ayarla
+- [ ] Repo Settings > Pages > Source: GitHub Actions olarak ayarla
 - [ ] Push edip Actions tab’inde deploy’ı kontrol et
 - [ ] Site: `[username].github.io/yasam-destegi-vakfi`
 
