@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+  
+        <title>Yaşam Desteği Vakfı</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <!-- Favicon Ekle -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/icon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/icon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/icon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/icon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+        <link rel="manifest" href="images/icon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* Container for all cards */
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                padding: 40px 0;
+            }
+
+            /* Row for the Başkan */
+            .baskan-row {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* Row for the Üyeler */
+            .uyeler-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            /* Row for the Üyeler */
+            .denetmen-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            /* Individual Card Styling */
+            .card {
+                width: 250px;
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                background-color: #fff;
+                position: relative;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .card img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 15px;
+            }
+
+            .card-title {
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #333;
+            }
+
+            .card-subtitle {
+                font-size: 1em;
+                color: #555;
+            }
+
+            /* "Yaşam Desteği" Metni İçin Stil */
+            .yasam-destegi-text {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0.8);
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-weight: bold;
+                color: #333;
+                font-size: 1em;
+            }
+
+            /* Hover Effect */
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .uyeler-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .card {
+                    width: 80%;
+                }
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header">
+
+				<!-- Logo -->
+
+				<!-- Nav -->
+                <h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
+                <nav id="nav">
+					<ul>
+						<li><a href="index.html">Anasayfa</a></li>
+						<li><a href="hakkimizda.html">Hakkımızda</a></li>
+						<li class="current"><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
+						<!-- <li><a href="vakifsenedi.html">Vakıf Senedi</a></li> -->
+						<li><a href="iletisim.html">İletişim</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+			<!-- Main -->
+			<section class="wrapper style1">
+				<div class="container">
+					<div id="content">
+
+						<!-- Content -->
+						<article>
+							<div class="card-container">
+								<!-- Yönetim Kurulu Başkanı -->
+								<div class="baskan-row">
+                                    <div class="card">
+                                        <!--<span class="yasam-destegi-text">Yaşam Desteği</span>-->
+                                        <!-- Resme tıklanabilir link eklemek için <a> etiketi kullanıldı -->
+                                        <a href="https://lsc.hacettepe.edu.tr/bbenan.html" target="_blank">
+                                            <img src="images/bbbigsqr.jpg" alt="Yönetim Kurulu Başkanı">
+                                        </a>
+                                        <div class="card-title">Yönetim Kurulu Başkanı</div>
+                                        <div class="card-subtitle">Benan Bayrakci</div>
+                                    </div>
+                                </div>
+
+								<!-- Yönetim Kurulu Üyeleri -->
+								<div class="uyeler-row">
+									<div class="card">
+										<img src="images/ufukgunes.png" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Başkan Yardımcısı</div>
+										<div class="card-subtitle">Ufuk Güneş</div>
+									</div>
+									<div class="card">
+										<img src="images/makbuleerdem.png" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-subtitle">Makbule Erdem</div>
+									</div>
+									<div class="card">
+										<img src="images/haykansqr.jpg" alt="Yönetim Kurulu Üyesi">
+										<div class="card-title">Yönetim Kurulu Üyesi</div>
+										<div class="card-subtitle">Hayrettin Hakan Aykan</div>
+									</div>
+								</div>
+								<div class="denetmen-row">
+									<div class="card">
+										<img src="images/selmankesicisqr.jpg" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Selman Kesici</div>
+									</div>
+									<div class="card">
+										<img src="images/birbilen.jpeg" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Ahmet Birbilen</div>
+									</div>
+									<div class="card">
+										<img src="images/ahmetozer.png" alt="Denetleme Kurulu Üyesi">
+										<div class="card-title">Denetleme Kurulu Üyesi</div>
+										<div class="card-subtitle">Ahmet Özer</div>
+									</div>
+								</div>								
+							</div>
+						</article>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						
+					</div>
+				</div>
+
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved</li>
+						<li>Design: <a href="https://turkalpmd.com">TurkalpMD</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
