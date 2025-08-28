@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #0ea5e9;
+}
+
+body {
+  @apply bg-gray-50 text-gray-800;
+}
+
+a {
+  @apply text-sky-600 hover:text-sky-700;
+}
+

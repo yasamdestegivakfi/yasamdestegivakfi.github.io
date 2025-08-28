@@ -1,8 +1,7 @@
-# Vite/Node artifacts (subproject)
-yasam-destegi-vakfi/node_modules/
-yasam-destegi-vakfi/dist/
+# Node/Vite artifacts
+node_modules/
+dist/
 
 # OS/editor
 .DS_Store
 *.log
-

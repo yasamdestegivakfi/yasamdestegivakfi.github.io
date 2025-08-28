@@ -23,17 +23,15 @@ jobs:
         with:
           node-version: '18'
       - name: Install dependencies
-        working-directory: yasam-destegi-vakfi
         run: npm ci || npm install
       - name: Build
-        working-directory: yasam-destegi-vakfi
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: yasam-destegi-vakfi/dist
+          path: dist
   deploy:
     environment:
       name: github-pages
