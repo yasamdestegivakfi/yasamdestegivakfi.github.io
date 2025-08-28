@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "bash -lc 'cp index.template.html index.html && vite build && rm -rf ./assets && cp -r dist/assets ./assets && cp dist/index.html ./index.html'",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -20,7 +20,7 @@ const posts = [
   },
 ]
 
-const asset = (p) => new URL(p, import.meta.env.BASE_URL).toString()
+const asset = (p) => new URL(p, document.baseURI).toString()
 
 export default function Posts() {
   return (
@@ -48,4 +48,3 @@ export default function Posts() {
     </section>
   )
 }
-

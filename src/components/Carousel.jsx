@@ -1,8 +1,9 @@
 import React from 'react'
 // Note: Using react-bootstrap Carousel per TODO. Styling is mainly Tailwind.
 import { Carousel as RBCarousel } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const asset = (p) => new URL(p, import.meta.env.BASE_URL).toString()
+const asset = (p) => new URL(p, document.baseURI).toString()
 
 const slides = [
   {
@@ -32,14 +33,14 @@ export default function Carousel() {
         <RBCarousel fade interval={5000} indicators controls>
           {slides.map((s, i) => (
             <RBCarousel.Item key={i}>
-              <a href={s.link} aria-label={s.caption}>
+              <Link to={s.link} aria-label={s.caption}>
                 <img
                   src={s.src}
                   alt={s.alt}
                   loading="lazy"
                   className="w-full h-[70vh] object-cover object-center opacity-90 hover:opacity-100 transition"
                 />
-              </a>
+              </Link>
               <RBCarousel.Caption>
                 <h3 className="text-white drop-shadow font-semibold">{s.caption}</h3>
               </RBCarousel.Caption>
@@ -50,4 +51,3 @@ export default function Carousel() {
     </section>
   )
 }
-
