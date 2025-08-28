@@ -31,7 +31,7 @@ export default function Posts() {
           <Link
             key={p.to}
             to={p.to}
-            className="block rounded-lg border bg-white shadow-md hover:-translate-y-2 transition-all"
+            className="block rounded-lg card-surface shadow-md card-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60"
           >
             <img
               src={asset(`assets/images/${p.img}`)}
@@ -40,7 +40,7 @@ export default function Posts() {
               className="w-full h-40 object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <h3 className="text-base font-semibold text-gray-800">{p.title}</h3>
+              <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100">{p.title}</h3>
             </div>
           </Link>
         ))}

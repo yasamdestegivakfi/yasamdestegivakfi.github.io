@@ -29,8 +29,8 @@ const slides = [
 export default function Carousel() {
   return (
     <section className="mx-auto max-w-6xl px-4 mt-6">
-      <div className="h-[70vh] min-h-[400px] rounded-lg shadow-lg overflow-hidden bg-black">
-        <RBCarousel fade interval={5000} indicators controls>
+      <div className="relative h-[70vh] min-h-[400px] rounded-lg shadow-lg overflow-hidden bg-black">
+        <RBCarousel fade interval={5000} indicators controls pause="hover" touch>
           {slides.map((s, i) => (
             <RBCarousel.Item key={i}>
               <Link to={s.link} aria-label={s.caption}>
@@ -41,8 +41,11 @@ export default function Carousel() {
                   className="w-full h-[70vh] object-cover object-center opacity-90 hover:opacity-100 transition"
                 />
               </Link>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <RBCarousel.Caption>
-                <h3 className="text-white drop-shadow font-semibold">{s.caption}</h3>
+                <h3 className="text-white drop-shadow-lg font-semibold text-2xl md:text-3xl">
+                  {s.caption}
+                </h3>
               </RBCarousel.Caption>
             </RBCarousel.Item>
           ))}
