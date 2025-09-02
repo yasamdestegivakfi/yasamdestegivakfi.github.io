@@ -3,11 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
   const [mode, setMode] = useTheme()
-  const label = useMemo(() => {
-    if (mode === 'dark') return 'Koyu'
-    if (mode === 'light') return 'Açık'
-    return 'Sistem'
-  }, [mode])
+  const label = useMemo(() => (mode === 'dark' ? 'Koyu' : 'Açık'), [mode])
 
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
@@ -51,10 +47,8 @@ function NavItem({ to, children }) {
 }
 
 function ThemeToggle({ mode, setMode, label }) {
-  const icon = mode === 'dark' ? '🌙' : mode === 'light' ? '☀️' : '💻'
-  const next = () => {
-    setMode(mode === 'system' ? 'dark' : mode === 'dark' ? 'light' : 'system')
-  }
+  const icon = mode === 'dark' ? '🌙' : '☀️'
+  const next = () => setMode(mode === 'dark' ? 'light' : 'dark')
 
   return (
     <button
@@ -71,31 +65,25 @@ function ThemeToggle({ mode, setMode, label }) {
 }
 
 function useTheme() {
-  const getSystem = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  const readStored = () => {
-    try { return localStorage.getItem('theme') || 'system' } catch { return 'system' }
+  const getInitial = () => {
+    try {
+      const stored = localStorage.getItem('theme')
+      if (stored === 'dark' || stored === 'light') return stored
+    } catch {}
+    // default to system once at load, then lock to explicit mode
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   }
-  const [mode, setMode] = useState(readStored())
+  const [mode, setMode] = useState(getInitial)
 
-  // apply theme class to html element
   const apply = (m) => {
     const root = document.documentElement
-    const effective = m === 'system' ? getSystem() : m
-    root.classList.toggle('dark', effective === 'dark')
+    root.classList.toggle('dark', m === 'dark')
     root.dataset.theme = m
   }
 
   useEffect(() => {
     apply(mode)
     try { localStorage.setItem('theme', mode) } catch {}
-  }, [mode])
-
-  useEffect(() => {
-    if (mode !== 'system') return
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const handler = () => apply('system')
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
   }, [mode])
 
   return [mode, setMode]
