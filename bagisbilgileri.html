@@ -1,189 +1,159 @@
-<!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yaşam Desteği Vakfı</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- Favicon Ekle -->
-		<link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="images/icon/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="images/icon/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="images/icon/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="images/icon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
-		<link rel="manifest" href="images/icon/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Yaşam Desteği Vakfı | Bağış Bilgileri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-			<!-- Header -->
-				<div id="header">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-					<!-- Logo -->
-						<h1><a href="index.html" id="logo"><em>Yaşam Desteği Vakfı</em></a></h1>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/modern.css" />
 
-					<!-- Nav -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Anasayfa</a></li>
-							<!--<li>
-								<a href="#">Dropdown</a>
-								<ul>
-									<li><a href="#">Lorem dolor</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam sed tempus</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Lorem dolor</a></li>
-											<li><a href="#">Phasellus magna</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam nisl</a></li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Veroeros feugiat</a></li>
-								</ul>
-							</li>-->
-							<li><a href="hakkimizda.html">Hakkımızda</a></li>
-							<li><a href="yonetimkurulu.html">Yönetim Kurulu</a></li>
-							<!-- <li><a href="vakifsenedi.html">Vakıf Senedi</a></li> -->
-							<li><a href="iletisim.html">İletişim</a></li>
-						</ul>
-					</nav>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-			</div>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+    <link rel="manifest" href="images/icon/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div id="page-wrapper">
+        <header class="site-header">
+            <div class="container-custom">
+                <div class="nav-wrap">
+                    <a class="brand" href="index.html">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <span>Yaşam Desteği Vakfı</span>
+                    </a>
+                    <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <nav class="nav-links" id="primary-nav">
+                        <a href="index.html">Anasayfa</a>
+                        <a href="hakkimizda.html">Hakkımızda</a>
+                        <a href="yonetimkurulu.html">Yönetim Kurulu</a>
+                        <a href="iletisim.html">İletişim</a>
+                        <a href="bagisbilgileri.html" class="donate-button active">Bağış Yap</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
-			<!-- Main -->
-			<section class="wrapper style1">
-				<div class="container">
-					<div id="content">
-						<article>
-							<header>
-								<h2>Bağış Yaparak Destek Olun</h2>
-							</header>
-							<span class="image featured"><img src="images/donation.jpg" alt="" /></span>
-			
-							<p>
-								Siz de bağış yaparak ihtiyaç sahiplerine umut olabilir ve destek sağlayabilirsiniz. Maddi yardımlarınız, 
-								ailelerin temel ihtiyaçlarının karşılanmasından çocukların eğitimine kadar birçok alanda kullanılmaktadır.
-							</p>
-			
-							<h4>Bağış Bilgileri:</h4>
-							<ul>
-								<li><strong>IBAN:</strong> TR85 0001 2001 5410 0016 1000 42</li>
-								<li><strong>Alıcı İsmi:</strong> Yaşam Desteği Vakfı</li>
-								<li><strong>Banka Adı:</strong> Halkbank </li>
-							</ul>
-			
-							<p>
-								Bağış yaparken açıklama kısmına desteklemek istediğiniz projeyi (örneğin: "<strong>Sosyal Yardım Projesi</strong>") 
-								belirtmeyi unutmayınız. Yardımlarınız, ihtiyaç sahiplerine güvenle ulaştırılacaktır.
-							</p>
-			
-							<!--<a href="bagis.html" class="button primary">Hemen Bağış Yap</a>-->
-						</article>
-					</div>
-				</div>
-			</section>
-			
+        <main>
+            <section class="hero" style="--hero-image: url('images/donation.jpg'); --hero-image-opacity: 0.4;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Bağışlarınızın gücü</span>
+                        <h1>Her katkı hastalar ve aileler için yeni bir umut</h1>
+                        <p>Yapacağınız bağışlar; hasta yakınlarının temel ihtiyaçlarından öğrencilerin eğitimine, bilimsel projelerden sosyal desteklere kadar tüm programlarımıza doğrudan kaynak sağlar.</p>
+                        <div class="hero-actions">
+                            <a class="btn-primary" href="#bagis-detay">
+                                <i class="fa-solid fa-credit-card"></i>
+                                IBAN Bilgileri
+                            </a>
+                            <a class="btn-secondary" href="iletisim.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                Bize Ulaşın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-			<!-- Footer -->
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<!--<section class="col-3 col-6-narrower col-12-mobilep">
-							<h3>Links to Stuff</h3>
-							<ul class="links">
-								<li><a href="#">Mattis et quis rutrum</a></li>
-								<li><a href="#">Suspendisse amet varius</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum accumsan dolor</a></li>
-								<li><a href="#">Mattis rutrum accumsan</a></li>
-								<li><a href="#">Suspendisse varius nibh</a></li>
-								<li><a href="#">Sed et dapibus mattis</a></li>
-							</ul>
-						</section>
-						<section class="col-3 col-6-narrower col-12-mobilep">
-							<h3>More Links to Stuff</h3>
-							<ul class="links">
-								<li><a href="#">Duis neque nisi dapibus</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum accumsan sed</a></li>
-								<li><a href="#">Mattis et sed accumsan</a></li>
-								<li><a href="#">Duis neque nisi sed</a></li>
-								<li><a href="#">Sed et dapibus quis</a></li>
-								<li><a href="#">Rutrum amet varius</a></li>
-							</ul>
-						</section>-->
-						<!--<section class="col-6 col-12-narrower">
-							<h3>Get In Touch</h3>
-							<form>
-								<div class="row gtr-50">
-									<div class="col-6 col-12-mobilep">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-mobilep">
-										<input type="email" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" class="button alt" value="Send Message" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>-->
-					</div>
-				</div>
+            <section class="page-section" id="bagis-detay">
+                <div class="container-custom">
+                    <div class="section-heading">
+                        <span>Bağış Bilgileri</span>
+                        <h2>Desteklerinizle daha fazla aileye ulaşıyoruz</h2>
+                        <p>Vakfımızın tüm programları, sizlerin güvenilir katkılarıyla büyüyor. Banka havalesiyle yapacağınız bağışlar ihtiyaç sahiplerine hızlıca ulaştırılır.</p>
+                    </div>
 
-				<!-- Icons -->
-					<!--<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
-					</ul>-->
+                    <article class="content-card">
+                        <span class="kicker"><i class="fa-solid fa-building-columns"></i> Banka Havalesi</span>
+                        <h3>IBAN bilgilerimiz</h3>
+                        <p>Bağış yaparken açıklama alanına desteklemek istediğiniz projeyi belirtmeniz, bağışınızın doğru programa yönlendirilmesini sağlar.</p>
+                        <div class="badge">IBAN: TR85 0001 2001 5410 0016 1000 42</div>
+                        <p><strong>Alıcı:</strong> Yaşam Desteği Vakfı<br><strong>Banka:</strong> Türkiye Halk Bankası</p>
+                        <ul class="feature-list">
+                            <li>Bağış açıklamasında proje adı (ör. “Sosyal Yardım Projesi”) veya destek türünü yazabilirsiniz.</li>
+                            <li>Bağış dekontunu <a href="mailto:yasamdestegivakfi@gmail.com">yasamdestegivakfi@gmail.com</a> adresine göndererek bilgilendirme yapabilirsiniz.</li>
+                            <li>Kurumsal bağışlar ve düzenli destekler için bizimle iletişime geçerek süreç danışmanlığı alabilirsiniz.</li>
+                        </ul>
+                    </article>
 
-				<!-- Copyright -->
-					<div class="copyright">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="https://turkalpmd.com">TurkalpMD</a></li>
-						</ul>
-					</div>
+                    <div class="info-grid">
+                        <article class="info-card">
+                            <h3>Tek seferlik destek</h3>
+                            <p>Havale veya EFT ile yaptığınız bağış, aynı gün içinde önceliklendirilmiş programlara aktarılır ve size bilgilendirme yapılır.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3>Düzenli bağış planı</h3>
+                            <p>Aylık veya dönemsel bağış talimatlarıyla sosyal yardım, burs ve sağlık destek fonlarımızı düzenli olarak güçlendirebilirsiniz.</p>
+                        </article>
+                        <article class="info-card">
+                            <h3>Kurumsal iş birliği</h3>
+                            <p>Şirketiniz adına fon oluşturmak, ayni destek sağlamak veya projelerimize sponsor olmak için bizimle iletişime geçebilirsiniz.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-			</div>
+            <section class="page-section" id="bagis-cta">
+                <div class="container-custom">
+                    <div class="cta-card">
+                        <h2>Bağışınızı bizimle paylaşın</h2>
+                        <p>Gönderdiğiniz dekontu iletirseniz, bağışınızın hangi programda kullanıldığını takip etmenizi sağlarız ve teşekkür mektubumuzu paylaşırız.</p>
+                        <a class="cta-button" href="mailto:yasamdestegivakfi@gmail.com">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Dekont Gönder
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-	</div>
+        <footer class="site-footer">
+            <div class="container-custom">
+                <div class="footer-top">
+                    <div class="footer-links">
+                        <a href="gizlilik.html">Gizlilik</a>
+                        <a href="kosullar.html">Kullanım Şartları</a>
+                        <a href="https://turkalpmd.com" target="_blank" rel="noopener">Tasarım: TurkalpMD</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
+                    <span>Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
