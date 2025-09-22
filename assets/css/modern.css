@@ -152,11 +152,17 @@ main {
     box-shadow: 0 32px 60px -44px rgba(15, 23, 42, 0.65);
     border: 1px solid rgba(148, 163, 184, 0.22);
     background: #0b1220;
+    height: clamp(260px, 36vw, 560px);
+}
+
+.carousel-shell .carousel-inner,
+.carousel-shell .carousel-item {
+    height: 100%;
 }
 
 .carousel-shell .carousel-item img {
     width: 100%;
-    height: clamp(240px, 34vw, 520px);
+    height: 100%;
     object-fit: cover;
     display: block;
 }
