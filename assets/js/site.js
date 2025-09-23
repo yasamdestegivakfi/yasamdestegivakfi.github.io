@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         i18nNodes.forEach((el) => {
             el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
         });
+        // toggle common TR/EN content blocks used on some pages (e.g., #text-tr / #text-en)
+        var textTR = document.getElementById('text-tr');
+        var textEN = document.getElementById('text-en');
+        if (textTR && textEN) {
+            if (lang === 'en') { textTR.style.display = 'none'; textEN.style.display = ''; }
+            else { textEN.style.display = 'none'; textTR.style.display = ''; }
+        }
         // navbar labels (robust by current text)
         const navTextMap = {
             'Anasayfa': { tr: 'Anasayfa', en: 'Home' },
