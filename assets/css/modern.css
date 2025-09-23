@@ -974,9 +974,9 @@ main {
         display: inline-flex;
     }
 
-    .donate-button {
-        display: none;
-    }
+    /* Hide any donate button in header on mobile, but keep footer one visible */
+    .site-header .donate-button { display: none; }
+    .site-footer .donate-button { display: inline-flex; }
 
     .hero {
         padding: 5.5rem 0 4.5rem;
