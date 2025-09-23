@@ -51,6 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         // set html lang
         document.documentElement.setAttribute('lang', lang);
+        // sync lang param on links that require it
+        document.querySelectorAll('a[data-sync-lang]')?.forEach((a)=>{
+            try {
+                const url = new URL(a.getAttribute('href'), window.location.origin);
+                url.searchParams.set('lang', lang);
+                a.setAttribute('href', url.pathname + '?' + url.searchParams.toString());
+            } catch(e) {
+                // fallback for relative href without base
+                const href = (a.getAttribute('href')||'').split('?')[0];
+                a.setAttribute('href', href + '?lang=' + lang);
+            }
+        });
         // active state on all switchers
         switchers.forEach((sw) => {
             sw.querySelectorAll('a').forEach((a) => {
