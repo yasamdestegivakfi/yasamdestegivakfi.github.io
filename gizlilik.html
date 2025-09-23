@@ -44,11 +44,15 @@
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a href="iletisim.html">İletişim</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">TR</a>
+                        <a href="#" data-lang="en">EN</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main data-lang="tr">
             <section class="hero" style="--hero-image: url('images/banner6.png'); --hero-image-opacity: 0.3;">
                 <div class="container-custom hero-content">
                     <div class="hero-text">
@@ -126,6 +130,27 @@
             </section>
         </main>
 
+        <main data-lang="en" style="display:none">
+            <section class="hero" style="--hero-image: url('images/banner6.png'); --hero-image-opacity: 0.3;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Privacy policy</span>
+                        <h1>We protect your personal data transparently and securely</h1>
+                        <p>This policy explains how we collect, process and protect your data under the applicable law.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <div class="container-custom">
+                    <article class="content-card">
+                        <h2>Privacy Policy</h2>
+                        <p>We care about the privacy of your personal data. This policy explains the principles of processing, transfer and protection of your data.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
         <footer class="site-footer">
             <div class="container-custom">
                 <div class="footer-top">
@@ -161,5 +186,20 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var s = document.getElementById('lang-switch');
+            if(!s) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            s.addEventListener('click', function(e){
+                var t = e.target; if(t.tagName!== 'A') return; e.preventDefault();
+                Array.from(s.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if(t.getAttribute('data-lang')==='en'){ tr.style.display='none'; en.style.display=''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display='none'; tr.style.display=''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
 </body>
 </html>

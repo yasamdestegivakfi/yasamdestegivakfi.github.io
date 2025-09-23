@@ -44,11 +44,15 @@
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a href="iletisim.html">İletişim</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">TR</a>
+                        <a href="#" data-lang="en">EN</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main data-lang="tr">
             <section class="hero" style="--hero-image: url('images/hastayadestek.png'); --hero-image-opacity: 0.38;">
                 <div class="container-custom hero-content">
                     <div class="hero-text">
@@ -102,6 +106,26 @@
             </section>
         </main>
 
+        <main data-lang="en" style="display:none">
+            <section class="hero" style="--hero-image: url('images/hastayadestek.png'); --hero-image-opacity: 0.38;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Family social support</span>
+                        <h1>We stand with families during long treatment journeys</h1>
+                        <p>We help with accommodation, transport and essential needs so families can focus on care.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="page-section">
+                <div class="container-custom">
+                    <article class="content-card">
+                        <span class="kicker"><i class="fa-solid fa-hands-holding-circle"></i> How we help</span>
+                        <p>We provide material and psychosocial support to families traveling for healthcare access.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
         <footer class="site-footer">
             <div class="container-custom">
                 <div class="footer-top">
@@ -137,5 +161,20 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var s = document.getElementById('lang-switch');
+            if(!s) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            s.addEventListener('click', function(e){
+                var t = e.target; if(t.tagName!== 'A') return; e.preventDefault();
+                Array.from(s.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if(t.getAttribute('data-lang')==='en'){ tr.style.display='none'; en.style.display=''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display='none'; tr.style.display=''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -43,13 +43,16 @@
                         <a href="hakkimizda.html">Hakkımızda</a>
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a href="iletisim.html">İletişim</a>
-                        <a href="bagisbilgileri.html" class="donate-button active">Bağış Yap</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">TR</a>
+                        <a href="#" data-lang="en">EN</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main data-lang="tr">
             <section class="hero" style="--hero-image: url('images/donation.jpg'); --hero-image-opacity: 0.4;">
                 <div class="container-custom hero-content">
                     <div class="hero-text">
@@ -118,6 +121,29 @@
             </section>
         </main>
 
+        <main data-lang="en" style="display:none">
+            <section class="hero" style="--hero-image: url('images/donation.jpg'); --hero-image-opacity: 0.4;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Power of giving</span>
+                        <h1>Every contribution brings new hope</h1>
+                        <p>Your donations directly support our programs from social aid to education and research.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section" id="donation-details">
+                <div class="container-custom">
+                    <article class="content-card">
+                        <span class="kicker"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
+                        <h3>Our IBAN</h3>
+                        <div class="iban-banner"><span>IBAN: TR85 0001 2001 5410 0016 1000 42</span></div>
+                        <p><strong>Recipient:</strong> Yaşam Desteği Vakfı<br><strong>Bank:</strong> Türkiye Halk Bankası</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
         <footer class="site-footer">
             <div class="container-custom">
                 <div class="footer-top">
@@ -153,5 +179,20 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var s = document.getElementById('lang-switch');
+            if(!s) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            s.addEventListener('click', function(e){
+                var t = e.target; if(t.tagName!== 'A') return; e.preventDefault();
+                Array.from(s.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if(t.getAttribute('data-lang')==='en'){ tr.style.display='none'; en.style.display=''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display='none'; tr.style.display=''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
 </body>
 </html>

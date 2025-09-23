@@ -44,11 +44,15 @@
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a class="active" href="iletisim.html">İletişim</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">TR</a>
+                        <a href="#" data-lang="en">EN</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main data-lang="tr">
             <section class="hero" style="--hero-image: url('images/banner3.jpeg'); --hero-image-opacity: 0.32;">
                 <div class="container-custom hero-content">
                     <div class="hero-text">
@@ -90,6 +94,42 @@
             </section>
         </main>
 
+        <main data-lang="en" style="display:none">
+            <section class="hero" style="--hero-image: url('images/banner3.jpeg'); --hero-image-opacity: 0.32;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Contact</span>
+                        <h1>We are here for your questions and collaborations</h1>
+                        <p>Contact us to learn about our programs, donation process or to co-create projects.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <div class="container-custom">
+                    <div class="contact-grid">
+                        <article class="contact-card">
+                            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                            <strong>General contact</strong>
+                            <p>For program applications, volunteering and partnership requests.</p>
+                            <a href="mailto:yasamdestegivakfi@gmail.com">yasamdestegivakfi@gmail.com</a>
+                        </article>
+                        <article class="contact-card">
+                            <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <strong>Donations and funds</strong>
+                            <p>Write to us for donation receipts, corporate support and sponsorships.</p>
+                            <a href="mailto:yasamdestegivakfi@gmail.com?subject=Donation%20Info">Request donation info</a>
+                        </article>
+                    </div>
+
+                    <article class="content-card">
+                        <span class="kicker"><i class="fa-solid fa-circle-info"></i> Response times</span>
+                        <p>We aim to respond to emails within 48 hours depending on workload. For urgent matters, mention your priority in the subject.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
         <footer class="site-footer">
             <div class="container-custom">
                 <div class="footer-top">
@@ -125,5 +165,20 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var s = document.getElementById('lang-switch');
+            if(!s) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            s.addEventListener('click', function(e){
+                var t = e.target; if(t.tagName!== 'A') return; e.preventDefault();
+                Array.from(s.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if(t.getAttribute('data-lang')==='en'){ tr.style.display='none'; en.style.display=''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display='none'; tr.style.display=''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
 </body>
 </html>
