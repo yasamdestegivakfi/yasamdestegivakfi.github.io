@@ -34,23 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
         i18nNodes.forEach((el) => {
             el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
         });
-        // navbar labels
-        const navLabelMap = {
-            'index.html': { tr: 'Anasayfa', en: 'Home' },
-            'hakkimizda.html': { tr: 'Hakkımızda', en: 'About' },
-            'yonetimkurulu.html': { tr: 'Yönetim Kurulu', en: 'Board' },
-            'iletisim.html': { tr: 'İletişim', en: 'Contact' },
-            'bagisbilgileri.html': { tr: 'Bağış Yap', en: 'Donate' }
+        // navbar labels (robust by current text)
+        const navTextMap = {
+            'Anasayfa': { tr: 'Anasayfa', en: 'Home' },
+            'Hakkımızda': { tr: 'Hakkımızda', en: 'About' },
+            'Yönetim Kurulu': { tr: 'Yönetim Kurulu', en: 'Board' },
+            'İletişim': { tr: 'İletişim', en: 'Contact' },
+            'Bağış Yap': { tr: 'Bağış Yap', en: 'Donate' }
         };
         document.querySelectorAll('#primary-nav a').forEach((a) => {
-            const href = (a.getAttribute('href') || '').split('?')[0];
-            const key = Object.keys(navLabelMap).find(k => href.endsWith(k));
+            const current = (a.textContent || '').trim();
+            const key = navTextMap[current] ? current : Object.keys(navTextMap).find(k => current.toLowerCase() === navTextMap[k].en.toLowerCase());
             if (key) {
-                a.textContent = navLabelMap[key][lang] || a.textContent;
-                if (a.classList.contains('active')) {
-                    // ensure active still styled after text change
-                    a.classList.add('active');
-                }
+                a.textContent = navTextMap[key][lang];
             }
         });
         // set html lang
