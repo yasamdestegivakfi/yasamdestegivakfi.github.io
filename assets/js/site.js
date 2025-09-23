@@ -59,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const storedLang = localStorage.getItem('lang') || 'tr';
-    applyLang(storedLang);
+    // Prefer URL ?lang=.. over stored, then default tr
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang) localStorage.setItem('lang', urlLang);
+    const initialLang = urlLang || localStorage.getItem('lang') || 'tr';
+    applyLang(initialLang);
 
     switchers.forEach((sw) => {
         sw.addEventListener('click', (e) => {
