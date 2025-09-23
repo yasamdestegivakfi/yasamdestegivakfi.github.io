@@ -55,38 +55,9 @@
         <main data-lang="tr">
             <section class="carousel-section">
                 <div class="container-custom">
-                    <div id="home-carousel" class="carousel slide carousel-fade carousel-shell" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
-                            
-                            <!-- İkinci gösterge geçici olarak kapatıldı
-                            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="1" aria-label="Banner 2"></button>
-                            -->
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <a href="ecmozirvesi.html" target="_blank" rel="noopener">
-                                    <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Yaşam Desteği Vakfı">
-                                </a>
-                            </div>
-                            <!-- İkinci slayt geçici olarak kapatıldı
-                            <div class="carousel-item">
-                                <a href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
-                                    <img src="images/mvkbanner.jpeg" class="d-block w-100" alt="Yaşam Desteği Vakfı">
-                                </a>
-                            </div>
-                            -->
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Önceki</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Sonraki</span>
-                        </button>
-                        
-                    </div>
+                    <a href="ecmozirvesi.html" target="_blank" rel="noopener">
+                        <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Yaşam Desteği Vakfı" />
+                    </a>
                 </div>
             </section>
             
@@ -199,26 +170,9 @@
         <main data-lang="en" style="display:none">
             <section class="carousel-section">
                 <div class="container-custom">
-                    <div id="home-carousel-en" class="carousel slide carousel-fade carousel-shell" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#home-carousel-en" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <a href="ecmozirvesi.html" target="_blank" rel="noopener">
-                                    <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Life Support Foundation">
-                                </a>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel-en" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel-en" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                    <a href="ecmozirvesi.html" target="_blank" rel="noopener">
+                        <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Life Support Foundation" />
+                    </a>
                 </div>
             </section>
 
@@ -342,8 +296,10 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
-                    <span>Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="tr">&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
+                    <span data-i18n data-lang="tr">Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="en" style="display:none">&copy; <script>document.write(new Date().getFullYear())</script> Life Support Foundation. All rights reserved.</span>
+                    <span data-i18n data-lang="en" style="display:none">We work together to improve more lives.</span>
                 </div>
             </div>
         </footer>
@@ -373,6 +329,10 @@
                 t.classList.add('active');
                 if (lang === 'en') { tr.style.display = 'none'; en.style.display = ''; document.documentElement.setAttribute('lang','en'); }
                 else { en.style.display = 'none'; tr.style.display = ''; document.documentElement.setAttribute('lang','tr'); }
+                // toggle footer texts
+                Array.from(document.querySelectorAll('[data-i18n][data-lang]')).forEach(function(el){
+                    el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+                });
             });
         })();
     </script>
