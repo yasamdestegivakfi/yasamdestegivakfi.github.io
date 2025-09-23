@@ -75,6 +75,12 @@ main {
     border-bottom: none;
 }
 
+.brand img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -527,7 +533,9 @@ main {
 }
 
 .footer-top {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -545,6 +553,12 @@ main {
 .social-icons {
     display: flex;
     gap: 0.75rem;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .social-icons a {
