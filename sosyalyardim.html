@@ -176,8 +176,10 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
-                    <span>Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="tr">&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
+                    <span data-i18n data-lang="tr">Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="en" style="display:none">&copy; <script>document.write(new Date().getFullYear())</script> Life Support Foundation. All rights reserved.</span>
+                    <span data-i18n data-lang="en" style="display:none">We work together to improve more lives.</span>
                 </div>
             </div>
         </footer>
@@ -192,6 +194,24 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var s = document.getElementById('lang-switch');
+            if(!s) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            s.addEventListener('click', function(e){
+                var t = e.target; if(t.tagName!== 'A') return; e.preventDefault();
+                Array.from(s.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if(t.getAttribute('data-lang')==='en'){ tr.style.display='none'; en.style.display=''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display='none'; tr.style.display=''; document.documentElement.setAttribute('lang','tr'); }
+                Array.from(document.querySelectorAll('[data-i18n][data-lang]')).forEach(function(el){
+                    el.style.display = (el.getAttribute('data-lang') === t.getAttribute('data-lang')) ? '' : 'none';
+                });
+            });
+        })();
+    </script>
     <script>
         (function(){
             var s = document.getElementById('lang-switch');

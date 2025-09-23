@@ -44,6 +44,10 @@
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a href="iletisim.html">İletişim</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">🇹🇷 TR</a>
+                        <a href="#" data-lang="en">🇬🇧 EN</a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -121,8 +125,10 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
-                    <span>Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="tr">&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
+                    <span data-i18n data-lang="tr">Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                    <span data-i18n data-lang="en" style="display:none">&copy; <script>document.write(new Date().getFullYear())</script> Life Support Foundation. All rights reserved.</span>
+                    <span data-i18n data-lang="en" style="display:none">We work together to improve more lives.</span>
                 </div>
             </div>
         </footer>
