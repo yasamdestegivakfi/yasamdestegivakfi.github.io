@@ -44,11 +44,15 @@
                         <a href="yonetimkurulu.html">Yönetim Kurulu</a>
                         <a href="iletisim.html">İletişim</a>
                     </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">TR</a>
+                        <a href="#" data-lang="en">EN</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main data-lang="tr">
             <section class="carousel-section">
                 <div class="container-custom">
                     <div id="home-carousel" class="carousel slide carousel-fade carousel-shell" data-bs-ride="carousel">
@@ -61,7 +65,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                                <a href="ecmozirvesi.html" target="_blank" rel="noopener">
                                     <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Yaşam Desteği Vakfı">
                                 </a>
                             </div>
@@ -192,6 +196,53 @@
             
         </main>
 
+        <main data-lang="en" style="display:none">
+            <section class="hero" style="--hero-image: url('images/banner.jpg'); --hero-image-opacity: 0.28;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Welcome</span>
+                        <h1>A foundation for lifesaving support</h1>
+                        <p>We bring scientific progress and human-centered support together for the community.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="programs">
+                <div class="container-custom">
+                    <div class="program-grid">
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+                            <img src="images/pic01.jpg" alt="Social Support for Patient Families">
+                            <h3><a href="sosyalyardim.html">Social Support for Patient Families</a></h3>
+                            <p>We stand by families in need during illness, easing their burden.</p>
+                            <a href="sosyalyardim.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                            <img src="images/pic02.jpg" alt="Support for Widowed and Orphaned Families">
+                            <h3><a href="dulyetim.html">Support for Widowed and Orphaned Families</a></h3>
+                            <p>We offer economic and social support to help rebuild lives.</p>
+                            <a href="dulyetim.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <img src="images/pic03.jpg" alt="Student Scholarship">
+                            <h3><a href="ogrencibursu.html">Student Scholarship</a></h3>
+                            <p>We empower students in need through scholarships.</p>
+                            <a href="ogrencibursu.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-flask"></i></div>
+                            <img src="images/pic04.jpg" alt="Research Support">
+                            <h3><a href="arastirmadestek.html">Research Support</a></h3>
+                            <p>We enable innovative projects that advance science.</p>
+                            <a href="arastirmadestek.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <footer class="site-footer">
             <div class="container-custom">
                 <div class="footer-top">
@@ -227,5 +278,23 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var switcher = document.getElementById('lang-switch');
+            if (!switcher) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            switcher.addEventListener('click', function(e){
+                var t = e.target;
+                if (t.tagName !== 'A') return;
+                e.preventDefault();
+                var lang = t.getAttribute('data-lang');
+                Array.from(switcher.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if (lang === 'en') { tr.style.display = 'none'; en.style.display = ''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display = 'none'; tr.style.display = ''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
 </body>
 </html>
