@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Yaşam Desteği Vakfı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/modern.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+    <link rel="manifest" href="images/icon/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div id="page-wrapper">
+        <header class="site-header">
+            <div class="container-custom">
+                <div class="nav-wrap">
+                    <a class="brand" href="index.html" aria-label="Anasayfa">
+                        <img src="images/navbarlogo.png" alt="Yaşam Desteği Vakfı" />
+                    </a>
+                    <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <nav class="nav-links" id="primary-nav">
+                        <a class="active" href="index.html">Anasayfa</a>
+                        <a href="hakkimizda.html">Hakkımızda</a>
+                        <a href="yonetimkurulu.html">Yönetim Kurulu</a>
+                        <a href="iletisim.html">İletişim</a>
+                    </nav>
+                    <div class="lang-switch" id="lang-switch">
+                        <a href="#" data-lang="tr" class="active">🇹🇷 TR</a>
+                        <a href="#" data-lang="en">🇬🇧 EN</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main data-lang="tr">
+            <section class="carousel-section">
+                <div class="container-custom">
+                    <div id="home-carousel" class="carousel slide carousel-fade carousel-shell" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+                            
+                            <!-- İkinci gösterge geçici olarak kapatıldı
+                            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="1" aria-label="Banner 2"></button>
+                            -->
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="ecmozirvesi.html" target="_blank" rel="noopener">
+                                    <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Yaşam Desteği Vakfı">
+                                </a>
+                            </div>
+                            <!-- İkinci slayt geçici olarak kapatıldı
+                            <div class="carousel-item">
+                                <a href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                                    <img src="images/mvkbanner.jpeg" class="d-block w-100" alt="Yaşam Desteği Vakfı">
+                                </a>
+                            </div>
+                            -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </button>
+                        
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="section" id="programlar">
+                <div class="container-custom">
+                    <!--<div class="section-heading">
+                        <span>Programlarımız</span>
+                        <h2>İhtiyaç sahiplerine özel destek çözümleri</h2>
+                        <p>Farklı yaşam koşullarına yönelik programlarımızla ailelere nefes oluyor, eğitim ve sağlık alanında kalıcı faydalar üretiyoruz.</p>
+                    </div>-->
+                    <div class="program-grid">
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+                            <img src="images/pic01.jpg" alt="Hasta Yakını Sosyal Yardımı">
+                            <h3><a href="sosyalyardim.html">Hasta Yakını Sosyal Yardımı</a></h3>
+                            <p>Hastalık sürecinde maddi ve manevi desteğe ihtiyaç duyan ailelerin yanında olarak yüklerini hafifletiyoruz.</p>
+                            <a href="sosyalyardim.html">Programı incele <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                            <img src="images/pic02.jpg" alt="Dul ve Yetim Aile Desteği">
+                            <h3><a href="dulyetim.html">Dul ve Yetim Aile Desteği</a></h3>
+                            <p>Zorlayıcı koşullarda kalan ailelere ekonomik ve sosyal destek sunarak yeni bir başlangıca katkı sağlıyoruz.</p>
+                            <a href="dulyetim.html">Programı incele <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <img src="images/pic03.jpg" alt="Öğrenci Bursu">
+                            <h3><a href="ogrencibursu.html">Öğrenci Bursu</a></h3>
+                            <p>Maddi desteğe ihtiyacı olan öğrencileri burs programlarımızla güçlendiriyor, geleceklerine ışık tutuyoruz.</p>
+                            <a href="ogrencibursu.html">Programı incele <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-flask"></i></div>
+                            <img src="images/pic04.jpg" alt="Bilimsel Araştırma Proje Desteği">
+                            <h3><a href="arastirmadestek.html">Bilimsel Araştırma Proje Desteği</a></h3>
+                            <p>Yenilikçi projelerin hayata geçmesini sağlayarak bilimsel gelişmelere kaynak oluşturuyoruz.</p>
+                            <a href="arastirmadestek.html">Programı incele <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-ribbon"></i></div>
+                            <img src="images/banner.png" alt="Transplantasyon desteği">
+                            <h3><a href="index.html">Transplantasyon Desteği</a></h3>
+                            <p>Organ nakli sürecindeki hastalara ve ailelerine rehberlik edip yaşam kalitelerini artırmayı amaçlıyoruz.</p>
+                            <a href="index.html">Programı incele <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container-custom">
+                    <a href="https://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                        <img src="images/mvkbanner.jpg" alt="LSC bağlantılı banner" class="img-fluid d-block w-100" />
+                    </a>
+                </div>
+            </section>
+
+            <section class="section" id="projeler">
+                <div class="container-custom">
+                    <div class="section-heading">
+                        <span>Çalışmalarımız</span>
+                        <h2>Toplum için etki odaklı projeler</h2>
+                        <p>Devam eden ve planlanan projelerimizle daha kapsayıcı, erişilebilir ve sürdürülebilir destek modelleri geliştiriyoruz.</p>
+                    </div>
+                    <div class="insight-grid">
+                        <article class="insight-card">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <h3>Aktif projelerimiz</h3>
+                            <p>Toplumun öncelikli ihtiyaçlarını gözeterek sağlık ve eğitim alanlarında kalıcı faydalar yaratıyoruz.</p>
+                        </article>
+                        <article class="insight-card">
+                            <i class="fa-solid fa-seedling"></i>
+                            <h3>Gündemdeki projeler</h3>
+                            <p>Yakında başlayacak projelerle daha geniş kitlelere ulaşmayı ve yenilikçi çözümler getirmeyi hedefliyoruz.</p>
+                        </article>
+                        <article class="insight-card">
+                            <i class="fa-solid fa-dove"></i>
+                            <h3>Bizden haberler</h3>
+                            <p>Vakfımızdan güncel duyuruları takip ederek yürüttüğümüz çalışmalardan haberdar olabilirsiniz.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="destekciler">
+                <div class="container-custom">
+                    <div class="supporters">
+                        <div class="section-heading" style="margin-bottom: 2rem;">
+                            <span>Destekçilerimiz</span>
+                            <h2>İş birliklerimizle daha fazla kişiye ulaşıyoruz</h2>
+                            <p>Vakfımızın iyilik yolculuğuna katkı sağlayan kurumlara minnettarız.</p>
+                        </div>
+                        <div class="supporter-grid">
+                            <a class="supporter-card" href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                                <img src="images/lscsupport1.jpg" alt="Hacettepe LSC">
+                            </a>
+                            <a class="supporter-card" href="https://www.vametmedikal.com/tr" target="_blank" rel="noopener">
+                                <img src="images/vamet.jpg" alt="Vamet Medikal">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <main data-lang="en" style="display:none">
+            <section class="carousel-section">
+                <div class="container-custom">
+                    <div id="home-carousel-en" class="carousel slide carousel-fade carousel-shell" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#home-carousel-en" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="ecmozirvesi.html" target="_blank" rel="noopener">
+                                    <img src="images/banner40thyo.jpg" class="d-block w-100" alt="Life Support Foundation">
+                                </a>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel-en" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel-en" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!--<section class="hero" style="--hero-image: url('images/banner.jpg'); --hero-image-opacity: 0.28;">
+                <div class="container-custom hero-content">
+                    <div class="hero-text">
+                        <span class="tagline">Welcome</span>
+                        <h1>A foundation for lifesaving support</h1>
+                        <p>We bring scientific progress and human-centered support together for the community.</p>
+                    </div>
+                </div>
+            </section>-->
+
+            <section class="section" id="programs">
+                <div class="container-custom">
+                    <div class="program-grid">
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+                            <img src="images/pic01.jpg" alt="Social Support for Patient Families">
+                            <h3><a href="sosyalyardim.html">Social Support for Patient Families</a></h3>
+                            <p>We stand by families in need during illness, easing their burden.</p>
+                            <a href="sosyalyardim.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                            <img src="images/pic02.jpg" alt="Support for Widowed and Orphaned Families">
+                            <h3><a href="dulyetim.html">Support for Widowed and Orphaned Families</a></h3>
+                            <p>We offer economic and social support to help rebuild lives.</p>
+                            <a href="dulyetim.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <img src="images/pic03.jpg" alt="Student Scholarship">
+                            <h3><a href="ogrencibursu.html">Student Scholarship</a></h3>
+                            <p>We empower students in need through scholarships.</p>
+                            <a href="ogrencibursu.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-icon"><i class="fa-solid fa-flask"></i></div>
+                            <img src="images/pic04.jpg" alt="Research Support">
+                            <h3><a href="arastirmadestek.html">Research Support</a></h3>
+                            <p>We enable innovative projects that advance science.</p>
+                            <a href="arastirmadestek.html">Explore program <i class="fa-solid fa-arrow-right"></i></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container-custom">
+                    <a href="https://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                        <img src="images/mvkbanner.jpg" alt="LSC banner" class="img-fluid d-block w-100" />
+                    </a>
+                </div>
+            </section>
+
+            <section class="section" id="projects">
+                <div class="container-custom">
+                    <div class="section-heading">
+                        <span>Our work</span>
+                        <h2>Impact-driven projects for society</h2>
+                        <p>We develop inclusive, accessible and sustainable support models through ongoing and planned projects.</p>
+                    </div>
+                    <div class="insight-grid">
+                        <article class="insight-card">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <h3>Active projects</h3>
+                            <p>We create lasting benefits in health and education with a focus on priority needs.</p>
+                        </article>
+                        <article class="insight-card">
+                            <i class="fa-solid fa-seedling"></i>
+                            <h3>Upcoming projects</h3>
+                            <p>We aim to reach wider audiences with innovative solutions starting soon.</p>
+                        </article>
+                        <article class="insight-card">
+                            <i class="fa-solid fa-dove"></i>
+                            <h3>News</h3>
+                            <p>Follow our latest announcements to stay informed about our work.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="supporters">
+                <div class="container-custom">
+                    <div class="supporters">
+                        <div class="section-heading" style="margin-bottom: 2rem;">
+                            <span>Our supporters</span>
+                            <h2>We reach more people through partnerships</h2>
+                            <p>We are grateful to the institutions that contribute to our journey of goodwill.</p>
+                        </div>
+                        <div class="supporter-grid">
+                            <a class="supporter-card" href="http://lsc.hacettepe.edu.tr" target="_blank" rel="noopener">
+                                <img src="images/lscsupport1.jpg" alt="Hacettepe LSC">
+                            </a>
+                            <a class="supporter-card" href="https://www.vametmedikal.com/tr" target="_blank" rel="noopener">
+                                <img src="images/vamet.jpg" alt="Vamet Medikal">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-custom">
+                <div class="footer-top">
+                    <div class="footer-links">
+                        <a href="gizlilik.html">Gizlilik</a>
+                        <a href="kosullar.html">Kullanım Şartları</a>
+                        <a href="https://turkalpmd.com" target="_blank" rel="noopener">Tasarım: TurkalpMD</a>
+                    </div>
+                    <div class="footer-right">
+                        <a href="bagisbilgileri.html" class="donate-button">Bağış Yap</a>
+                        <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; <script>document.write(new Date().getFullYear())</script> Yaşam Desteği Vakfı. Tüm hakları saklıdır.</span>
+                    <span>Birlikte daha fazla yaşamı iyileştirmek için çalışıyoruz.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script>
+        (function(){
+            var switcher = document.getElementById('lang-switch');
+            if (!switcher) return;
+            var tr = document.querySelector('main[data-lang="tr"]');
+            var en = document.querySelector('main[data-lang="en"]');
+            switcher.addEventListener('click', function(e){
+                var t = e.target;
+                if (t.tagName !== 'A') return;
+                e.preventDefault();
+                var lang = t.getAttribute('data-lang');
+                Array.from(switcher.querySelectorAll('a')).forEach(function(a){ a.classList.remove('active'); });
+                t.classList.add('active');
+                if (lang === 'en') { tr.style.display = 'none'; en.style.display = ''; document.documentElement.setAttribute('lang','en'); }
+                else { en.style.display = 'none'; tr.style.display = ''; document.documentElement.setAttribute('lang','tr'); }
+            });
+        })();
+    </script>
+</body>
+</html>
