@@ -34,6 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
         i18nNodes.forEach((el) => {
             el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
         });
+        // navbar labels
+        const navLabelMap = {
+            'index.html': { tr: 'Anasayfa', en: 'Home' },
+            'hakkimizda.html': { tr: 'Hakkımızda', en: 'About' },
+            'yonetimkurulu.html': { tr: 'Yönetim Kurulu', en: 'Board' },
+            'iletisim.html': { tr: 'İletişim', en: 'Contact' },
+            'bagisbilgileri.html': { tr: 'Bağış Yap', en: 'Donate' }
+        };
+        document.querySelectorAll('#primary-nav a').forEach((a) => {
+            const href = (a.getAttribute('href') || '').split('?')[0];
+            const key = Object.keys(navLabelMap).find(k => href.endsWith(k));
+            if (key) {
+                a.textContent = navLabelMap[key][lang] || a.textContent;
+                if (a.classList.contains('active')) {
+                    // ensure active still styled after text change
+                    a.classList.add('active');
+                }
+            }
+        });
         // set html lang
         document.documentElement.setAttribute('lang', lang);
         // active state on all switchers
