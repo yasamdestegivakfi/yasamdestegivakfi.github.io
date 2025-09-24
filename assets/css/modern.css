@@ -151,9 +151,12 @@ main {
     display: none;
     border: none;
     background: none;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
 }
+
+/* Ensure legacy title bar never shows */
+#titleBar { display: none !important; }
 
 /* Language switcher */
 .lang-switch {

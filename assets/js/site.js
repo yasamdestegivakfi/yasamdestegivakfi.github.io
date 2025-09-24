@@ -6,17 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    function setToggleLabel(isOpen, lang) {
+        if (isOpen) {
+            navToggle.innerHTML = lang === 'tr' ? '<i class="fa-solid fa-xmark"></i> Kapat' : '<i class="fa-solid fa-xmark"></i> Close';
+        } else {
+            navToggle.innerHTML = lang === 'tr' ? '<i class="fa-solid fa-bars"></i> Menü' : '<i class="fa-solid fa-bars"></i> Menu';
+        }
+    }
+
     navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('open');
-        navToggle.innerHTML = navLinks.classList.contains('open')
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
+        const lang = document.documentElement.getAttribute('lang') || 'tr';
+        setToggleLabel(navLinks.classList.contains('open'), lang);
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
-            navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            const lang = document.documentElement.getAttribute('lang') || 'tr';
+            setToggleLabel(false, lang);
         });
     });
 
@@ -59,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         // set html lang
         document.documentElement.setAttribute('lang', lang);
+        // update mobile toggle label
+        const isOpen = navLinks.classList.contains('open');
+        setToggleLabel(isOpen, lang);
         // sync lang param on links that require it
         document.querySelectorAll('a[data-sync-lang]')?.forEach((a)=>{
             try {
@@ -112,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('lang', 'en');
             });
     }
+
+    // Initial label for mobile toggle
+    const initialLangForToggle = document.documentElement.getAttribute('lang') || 'tr';
+    setToggleLabel(false, initialLangForToggle);
 
     switchers.forEach((sw) => {
         sw.addEventListener('click', (e) => {
