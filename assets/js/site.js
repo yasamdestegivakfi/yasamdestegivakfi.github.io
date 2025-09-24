@@ -82,6 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 a.setAttribute('href', href + '?lang=' + lang);
             }
         });
+        // also sync footer links and donate button
+        document.querySelectorAll('.footer-links a, .donate-button')?.forEach((a)=>{
+            if (!a.getAttribute('href')) return;
+            try {
+                const url = new URL(a.getAttribute('href'), window.location.origin);
+                url.searchParams.set('lang', lang);
+                a.setAttribute('href', url.pathname + '?' + url.searchParams.toString());
+            } catch(e) {
+                const href = (a.getAttribute('href')||'').split('?')[0];
+                a.setAttribute('href', href + '?lang=' + lang);
+            }
+        });
         // active state on all switchers
         switchers.forEach((sw) => {
             sw.querySelectorAll('a').forEach((a) => {
@@ -97,6 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.setAttribute('alt', lang === 'tr' ? 'Yaşam Desteği Vakfı' : 'Life Support Foundation Trust');
             }
         });
+
+        // footer donate button text
+        const donateBtn = document.querySelector('.donate-button');
+        if (donateBtn) {
+            donateBtn.textContent = (lang === 'tr') ? 'Bağış Yap' : 'Donate';
+        }
     }
 
     // Prefer URL ?lang=.. over stored, then geolocate (TR -> tr, else en)
