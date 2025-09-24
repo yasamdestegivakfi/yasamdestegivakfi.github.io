@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchers = document.querySelectorAll('.lang-switch');
     const mains = document.querySelectorAll('main[data-lang]');
     const i18nNodes = document.querySelectorAll('[data-i18n][data-lang]');
+    const brandLogos = document.querySelectorAll('.brand img');
 
     function applyLang(lang) {
         // toggle mains
@@ -76,13 +77,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 a.classList.toggle('active', a.getAttribute('data-lang') === lang);
             });
         });
+
+        // swap navbar logo by language
+        const logoSrc = (lang === 'tr') ? 'images/trnavbarlogo.png' : 'images/engnavbarlogo.png';
+        brandLogos.forEach((img) => {
+            if (img && img.getAttribute('src') !== logoSrc) {
+                img.setAttribute('src', logoSrc);
+                img.setAttribute('alt', lang === 'tr' ? 'Yaşam Desteği Vakfı' : 'Life Support Foundation Trust');
+            }
+        });
     }
 
-    // Prefer URL ?lang=.. over stored, then default tr
+    // Prefer URL ?lang=.. over stored, then geolocate (TR -> tr, else en)
     const urlLang = new URLSearchParams(window.location.search).get('lang');
     if (urlLang) localStorage.setItem('lang', urlLang);
-    const initialLang = urlLang || localStorage.getItem('lang') || 'tr';
-    applyLang(initialLang);
+    const storedLang = localStorage.getItem('lang');
+
+    if (urlLang || storedLang) {
+        applyLang(urlLang || storedLang);
+    } else {
+        // Assume EN by default, then correct to TR if IP is from Turkey
+        applyLang('en');
+        // Try a lightweight IP geolocation service; fail-safe to EN
+        fetch('https://ipapi.co/json/')
+            .then((res) => res.ok ? res.json() : Promise.reject())
+            .then((data) => {
+                const countryCode = (data && data.country) || (data && data.country_code);
+                const detectedLang = countryCode === 'TR' ? 'tr' : 'en';
+                localStorage.setItem('lang', detectedLang);
+                applyLang(detectedLang);
+            })
+            .catch(() => {
+                // keep EN on failure
+                localStorage.setItem('lang', 'en');
+            });
+    }
 
     switchers.forEach((sw) => {
         sw.addEventListener('click', (e) => {
