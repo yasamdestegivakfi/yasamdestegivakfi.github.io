@@ -33,35 +33,37 @@
 			alignment: 'center'
 		});
 
-	// Nav.
-
+	// Nav (legacy mobile title bar and panel disabled).
+	// If needed in the future, add class 'use-legacy-nav' to <body> to enable.
+	if ($body.hasClass('use-legacy-nav')) {
 		// Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">Can ver!</span>' +
-				'</div>'
-			)
-				.appendTo($body);
+		$(
+			'<div id="titleBar">' +
+				'<a href="#navPanel" class="toggle" aria-label="Open menu">☰</a>' +
+				'<span class="title">Can ver!</span>' +
+			'</div>'
+		)
+			.appendTo($body);
 
 		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+		$(
+			'<div id="navPanel">' +
+				'<nav>' +
+					$('#nav').navList() +
+				'</nav>' +
+			'</div>'
+		)
+			.appendTo($body)
+			.panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'left',
+				target: $body,
+				visibleClass: 'navPanel-visible'
+			});
+	}
 
 })(jQuery);
