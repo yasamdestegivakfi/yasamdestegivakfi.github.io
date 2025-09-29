@@ -1,5 +1,6 @@
 # Site settings
 title: "Yaşam Desteği Vakfı"
+name: "Yaşam Desteği Vakfı"
 description: "Life Support Foundation Trust - Yaşam Desteği Vakfı"
 baseurl: ""
 url: "https://yasamdestegivakfi.github.io"
@@ -15,6 +16,11 @@ author:
 # Social media
 social:
   github: yasamdestegivakfi
+
+# Site variables
+site_name: "Yaşam Desteği Vakfı"
+site_description: "Life Support Foundation Trust - Yaşam Desteği Vakfı"
+site_url: "https://yasamdestegivakfi.github.io"
 
 # Build settings
 markdown: kramdown
