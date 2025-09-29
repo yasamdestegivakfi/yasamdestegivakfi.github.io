@@ -64,36 +64,38 @@ body, html { background-color: #0b1220; }
 /* Carousel controls styling */
 .carousel-control-prev,
 .carousel-control-next {
-    background-color: #007bff;
+    background: none;
     border: none;
-    color: white;
-    padding: 8px 20px;
+    color: #333;
     cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: #0056b3;
+    color: #000;
+    transform: translateY(-50%) scale(1.2);
 }
 
 .carousel-control-prev {
-    left: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: -200px;
 }
 
 .carousel-control-next {
-    right: 20px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    margin-right: -200px;
 }
 
 .carousel-control-prev-icon,
@@ -102,19 +104,19 @@ body, html { background-color: #0b1220; }
     height: 0;
     border: none;
     background: none;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .carousel-control-prev-icon::before {
     content: "‹";
-    color: white;
+    color: inherit;
     line-height: 1;
 }
 
 .carousel-control-next-icon::before {
     content: "›";
-    color: white;
+    color: inherit;
     line-height: 1;
 }
 
