@@ -68,12 +68,13 @@ body, html { background-color: #0b1220; }
     border: none !important;
     color: #333 !important;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: bold;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -86,15 +87,15 @@ body, html { background-color: #0b1220; }
 .carousel-control-next:hover {
     color: #000 !important;
     background: none !important;
-    transform: translateY(-50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .carousel-control-prev {
-    left: 20px;
+    margin-left: -200px;
 }
 
 .carousel-control-next {
-    right: 20px;
+    margin-left: 200px;
 }
 
 .carousel-control-prev-icon,
@@ -103,7 +104,7 @@ body, html { background-color: #0b1220; }
     height: 0 !important;
     border: none !important;
     background: none !important;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: bold;
 }
 
