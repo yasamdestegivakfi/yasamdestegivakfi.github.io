@@ -1,0 +1,65 @@
+# Site settings
+title: "Yaşam Desteği Vakfı"
+description: "Life Support Foundation Trust - Yaşam Desteği Vakfı"
+baseurl: ""
+url: "https://yasamdestegivakfi.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: jekyll-theme-primer
+
+# Collections
+collections:
+  - pages
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-github-metadata
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .gitignore
+  - .github
+
+# Include files
+include:
+  - _pages
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Liquid settings
+liquid:
+  error_mode: warn
+  strict_filters: true
+  strict_variables: true
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
