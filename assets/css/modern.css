@@ -64,9 +64,9 @@ body, html { background-color: #0b1220; }
 /* Carousel controls styling */
 .carousel-control-prev,
 .carousel-control-next {
-    background: none;
-    border: none;
-    color: #333;
+    background: none !important;
+    border: none !important;
+    color: #333 !important;
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
@@ -78,45 +78,44 @@ body, html { background-color: #0b1220; }
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    z-index: 10;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    color: #000;
+    color: #000 !important;
+    background: none !important;
     transform: translateY(-50%) scale(1.2);
 }
 
 .carousel-control-prev {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-left: -200px;
+    left: 20px;
 }
 
 .carousel-control-next {
-    right: 50%;
-    transform: translate(50%, -50%);
-    margin-right: -200px;
+    right: 20px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    width: 0;
-    height: 0;
-    border: none;
-    background: none;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    background: none !important;
     font-size: 24px;
     font-weight: bold;
 }
 
 .carousel-control-prev-icon::before {
     content: "‹";
-    color: inherit;
+    color: #333 !important;
     line-height: 1;
 }
 
 .carousel-control-next-icon::before {
     content: "›";
-    color: inherit;
+    color: #333 !important;
     line-height: 1;
 }
 
