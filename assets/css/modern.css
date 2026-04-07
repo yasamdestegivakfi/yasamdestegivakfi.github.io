@@ -43,19 +43,21 @@ a:hover {
 /* Ensure no white gap below footer on overscroll */
 body, html { background-color: #0b1220; }
 
-/* Carousel Image Container - Fixed size based on largest image */
+/* Carousel: 3:2 aspect ratio for all banner slides */
 .carousel-image-container {
     width: 100%;
-    height: 400px; /* Fixed height based on largest image */
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    aspect-ratio: 3 / 2;
+    height: auto;
+    min-height: 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
-.carousel-image-container img {
+.carousel-image-container:not(.carousel-banner-lancet) > img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -64,6 +66,9 @@ body, html { background-color: #0b1220; }
 /* Lancet banner: white background, centered small image (no stretch) */
 .carousel-banner-lancet {
     background: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-banner-lancet a {
