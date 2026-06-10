@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Subtle shadow on the sticky header once the page is scrolled (runs on every page)
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        const onHeaderScroll = () => siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+        onHeaderScroll();
+        window.addEventListener('scroll', onHeaderScroll, { passive: true });
+    }
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.getElementById('primary-nav');
 
