@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // swap navbar logo by language
-        const logoSrc = (lang === 'tr') ? 'images/trnavbarlogo.png' : 'images/engnavbarlogo.png';
+        const logoSrc = (lang === 'tr') ? 'images/trnavbarlogo.webp' : 'images/engnavbarlogo.webp';
         brandLogos.forEach((img) => {
             if (img && img.getAttribute('src') !== logoSrc) {
                 img.setAttribute('src', logoSrc);
