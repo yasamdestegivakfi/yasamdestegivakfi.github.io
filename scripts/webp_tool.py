@@ -42,13 +42,30 @@ MANIFEST = ROOT / "assets" / "js" / "archive-manifest.js"
 RASTER_EXTS = {".jpg", ".jpeg", ".png"}
 EXT_PRIORITY = {".jpg": 0, ".jpeg": 1, ".png": 2}
 
-# Arşiv kolajında GÖSTERİLMEYECEK saf logo / sponsor / arayüz görselleri
-# (webp adının uzantısız hâli). Kolajı düzenlemek için buraya ekleyip çıkarın.
+# Arşiv kolajında GÖSTERİLMEYECEK görseller (webp adının uzantısız hâli):
+# logolar, sponsorlar, site bannerları, gradient/placeholder ve hero arka planları.
+# Kolajı düzenlemek için buraya isim ekleyip çıkarın, sonra:  --manifest
 COLLAGE_BLOCKLIST = {
+    # logolar / sponsorlar / arayüz
     "navbarlogo", "trnavbarlogo", "trnavbarlogo-original",
     "engnavbarlogo", "engnavbarlogo-foundation", "engnavbarnew",
     "vamet", "disposet", "lscsupport1",
     "vakıf", "vakıfbanner", "malenonimage",
+    # hero / bölüm arka plan görselleri (sayfalarda zaten kullanılıyor)
+    "childrenbanner", "hastayadestek-png", "ogrencidestek",
+    # genel / eski site bannerları
+    "banner", "banner-png", "banner1", "banner1-png", "banner2",
+    "banner4old", "banner5", "banner6",
+    "mvkbanner", "mvhkbanner", "ecmobanner", "bniccen", "bnicctr",
+    # 40. yıl etkinlik bannerları (tekrar eden)
+    "40thytr", "banner40thyo", "eng40thy", "tr40thy",
+    # gradient / placeholder / TV ekran görüntüleri / poster
+    "marchbanner_tr", "marchbanner_en",
+    "bannerdiyanettv", "bannerdiyanettv2",
+    "netanyahuen", "netanyahutr",
+    # belge taraması / stok / tekrar
+    "senet", "orphan", "orphan-jpg", "research", "donation",
+    "banner3", "hastayadestek",
 }
 
 
